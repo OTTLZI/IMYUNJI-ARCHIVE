@@ -44,7 +44,7 @@ header {
   z-index: 99;
   position: fixed;
   top: 0;
-  height: 300px;
+  height: 150px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.3);
   display: flex;
   justify-content: space-between;
@@ -68,7 +68,7 @@ header .header_text {
 .container {
   width: 100%;
   height: auto;
-  margin-top: 300px;
+  margin: 250px 0px 50px 0px;
   position: relative;
   display: flex;
 }
