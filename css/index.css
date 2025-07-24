@@ -1,0 +1,381 @@
+@charset "utf-8";
+@import "./common/reset.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #222;
+  font-size: 16px;
+  font-family: 'Noto Sans', sans-serif, 'Noto Sans KR', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+#wrap {
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.btn-top {
+  position: fixed;
+  right: 50px;
+  bottom: 20px;
+  font-size: 30px;
+  color: #fff;
+  background-color: #333;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  z-index: 98;
+}
+
+/* 헤더 */
+header {
+  width: 100%;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  height: 300px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 50px;
+  background-color: #fff;
+}
+
+header .header_item {
+  margin-top: 50px;
+}
+
+header .header_text {
+  text-align: left;
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+
+/*메인섹션*/
+.container {
+  width: 100%;
+  height: auto;
+  margin-top: 300px;
+  position: relative;
+  display: flex;
+}
+
+/* 좌측메뉴 */
+#side_nav {
+  min-width: 350px;
+}
+
+.gnb {
+  font-size: 14px;
+  max-width: 100%;
+  line-height: 40px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background-color: #fff;
+  margin-left: 50px;
+  word-break: keep-all;
+}
+
+/* 왼쪽 네비게이션 큰 */
+.gnb>ul>li>a {
+  color: #888;
+  transition: 0.5s;
+}
+
+.gnb:hover>ul>li>a {
+  opacity: 0.4;
+}
+
+.gnb>ul>li:hover .sub {
+  display: block;
+}
+
+.sub {
+  display: none;
+}
+
+/* 왼쪽 네비게이션 작은 글씨 */
+.sub>li>a {
+  display: block;
+  font-size: 13px;
+  color: #999;
+  height: 30px;
+  line-height: 30px;
+  word-break: break-all;
+}
+
+.sub>li>a::before {
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  display: inline-block;
+  margin-right: 5px;
+  opacity: 0;
+  font-size: 13px;
+}
+
+.sub>li>a:hover::before {
+  opacity: 1;
+}
+
+.sub>li>a:hover {
+  color: rgb(42, 130, 231);
+}
+
+/* ======오른쪽섹션========= */
+
+#right_content {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+#right_content>li {
+  position: relative;
+  transition: 0.5s;
+  cursor: pointer;
+  width: 350px;
+  height: 250px;
+  margin: 10px;
+  overflow: hidden;
+}
+
+#right_content li:hover {
+  transform: translateY(-15px);
+  box-shadow: 0px 5px rgba(209, 209, 209, 0.26);
+  box-sizing: border-box;
+}
+
+#right_content>li:hover .thum_txt {
+  top: 0;
+  text-align: center;
+}
+
+.pfThumnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thum_txt {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgb(209, 209, 209), transparent);
+  text-align: center;
+  color: #333;
+  padding-top: 200px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  font-size: 14px;
+}
+
+.thum_txt p {
+  font-size: 12px;
+  color: #666;
+}
+
+/* footer영역 */
+footer {
+  width: 95%;
+  border-top: 1px solid rgba(128, 128, 128, 0.3);
+  margin: 0 auto;
+  font-size: 12px;
+  text-align: center;
+  padding: 50px;
+}
+
+address {
+  font-style: normal;
+}
+
+
+/*----thumModal 모달 내부 css ----*/
+
+.modal {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 999;
+  margin: 0 auto;
+  display: none;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.btn-close {
+  position: absolute;
+  font-size: 4rem;
+  top: 4rem;
+  right: 6rem;
+  background: transparent;
+  border: 0;
+  color: #ffffff;
+  font-size: 4rem;
+}
+
+.modalContent {
+  position: absolute;
+  width: 1000px;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  right: 0;
+  bottom: 10px;
+  padding: 30px 50px 30px 50px;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+}
+
+.modalContent img {
+  max-width: 100%;
+  min-width: 350px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*------모달창 안, 이미지 크기 조정 ------*/
+#modalContent-1-1 {
+  max-width: 100%;
+}
+
+#modalContent-1-2,
+#modalContent-1-3,
+#modalContent-1-4 {
+  max-width: 100%;
+  padding-top: 20px;
+}
+
+
+
+#modalContent-2-1,
+#modalContent-2-2 {
+  max-height: 400px;
+  width: auto;
+}
+
+#modalContent-2-3 {
+  width: 420px;
+  float: left;
+  margin: 40px 0px 50px 0px;
+}
+
+#modalContent-2-4 {
+  float: right;
+  width: 450px;
+  margin: 40px 0px 50px 0px;
+}
+
+#modalContent-3-1 {
+  width: 500px;
+}
+
+#modalContent-5-2 {
+  width: 80%;
+}
+#modalContent-5-3 {
+  width: 80%;
+}
+
+#modalContent-6-2 {
+  width: 85%;
+}
+
+#contentTxt {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  margin: 80px 0 50px 0px;
+  padding-bottom: 50px;
+  column-gap: 30px;
+  border-bottom: 1px solid rgb(163, 163, 163);
+}
+
+#mainTitle {
+  color: #555;
+  font-size: 16px;
+}
+
+#subTitle {
+  color: #888;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#contentInfo {
+  color: #666;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+#modalContent-3-2 {
+  margin-bottom: 50px;
+}
+
+#modalContent-3-3 {
+  float: left;
+}
+
+#modalContent-3-4 {
+  float: right;
+  margin-bottom: 50px;
+}
+
+/* 
+* 모바일 사이즈 스타일 
+*/
+@media all and (max-width: 767px) {
+  header {
+    height: 150px;
+  }
+
+  .container {
+    flex-direction: column;
+    margin-top: 150px;
+  }
+
+  .btn-close {
+    z-index: 99;
+    top: 2rem;
+    right: 2rem;
+    color: rgb(190, 190, 190);
+  }
+
+  .modalContent {
+    width: 100%;
+  }
+
+  .sub>li>a::before {
+    display: none;
+  }
+
+  /* 모달 내부  */
+
+  .modalContent {
+    padding: 20px 20px;
+  }
+}

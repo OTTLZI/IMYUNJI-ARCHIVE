@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IMYUNJI PORTFOLIO</title>
+  <!-- 폰트어썸CDN-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <!-- css -->
+  <link rel="stylesheet" href="../css/content_watch.css">
+  <style>
+  </style>
+  <!-- slick.css -->
+  <link rel="stylesheet" href="../slick/slick.css">
+  <link rel="stylesheet" href="../slick/slick-theme.css">
+</head>
+
+<body>
+  <div id="wrap">
+    <header>
+      <div class="pinned_top">
+        <!-- side_nav -->
+        <div class="top_item">
+          <input type="checkbox" id="trigger">
+          <label for="trigger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <ul class="sidebar">
+            <li>
+              <a href="#">Web publishing</a>
+              <ul class="sub">
+                <li><a href="../vuumpet/vuumpet_main.html" target="_blank">Redesign model – voompet_web page</a></li>
+                <li><a href="./livingshop.html" target="_blank">living shop_web page</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Industial Design</a>
+              <ul class="sub">
+                <li><a href="#" target="_self">Customaized Pet Stroller_COZY</a></li>
+                <li><a href="./content_fika.html">Smart Airclean System_FIKA</a></li>
+                <li><a href="./content_entrepreneur.html">Hybrid Airclean System_ENTREPRENEUR</a></li>
+                <li><a href="./content_watch.html">Classic Watch</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Graphic Design</a>
+              <ul class="sub">
+                <li><a href="./content_thenbhd.html">CD Cover Design_The Neighbourhood</a></li>
+                <li><a href="./content_vangogh.html">Brochure Design_Van Gogh Exhibition</a></li>
+                <li><a href="./content_bookcover.html">Book Cover Design</a></li>
+                <li><a href="./content_ifyou.html">IF YOU</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="overlay"></div>
+        </div>
+        <div class="top_item">
+          <div class="pinned_txt">
+            <a href="../index.html">
+              <h1>IM YUNJI<br>ARCHIVE</h1>
+            </a>
+          </div>
+        </div>
+        <div class="top_item">
+          <div class="pinned_txt">
+            <a href="./imyunji_about.html">
+              <h1>ABOUT</h1>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="container">
+      <div id="slider-wrp">
+        <div class="slider-for">
+          <div class="slide-container"><img src="../img/modalContent-2-1.jpg" alt="고흐1"></div>
+          <div class="slide-container"><img src="../img/modalContent-2-2.jpg" alt="고흐2"></div>
+          <div class="slide-container"><img src="../img/modalContent-2-3.jpg" alt="고흐3"></div>
+          <div class="slide-container"><img src="../img/modalContent-2-4.jpg" alt="고흐4"></div>
+          <div class="slide-container"><img src="../img/vangogh.PNG" alt="고흐5"></div>
+        </div>
+        <div class="slider-nav">
+          <div class="slide-btn"><img src="../img/vangogh1_thum.PNG" alt="고흐1썸네일"></div>
+          <div class="slide-btn"><img src="../img/vangogh2_thum.PNG" alt="고흐2썸네일"></div>
+          <div class="slide-btn"><img src="../img/modalContent-2-3.jpg" alt="고흐3썸네일"></div>
+          <div class="slide-btn"><img src="../img/modalContent-2-4.jpg" alt="고흐4썸네일"></div>
+          <div class="slide-btn"><img src="../img/vangogh.PNG" alt="고흐5썸네일"></div>
+        </div>
+      </div>
+      <div id="contentTxt">
+        <p id="mainTitle">Brochure Design_Van Gogh Exhibition</p>
+        <p id="subTitle">Graphic Design<sup>2018</sup></p>
+        <p id="contentInfo">
+          Vincent van Gogh의 전시회 전반에 관한 컨셉트를 구상하고 티켓,브로슈어,<br>포스터 등을 제작한 그래픽 디자인 작업물
+        </p>
+      </div>
+    </section>
+    <!— Footer —>
+    <footer>
+      <address>
+        본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.<br>
+        © 2022 IM, Yun-Ji. All Rights Reserved.
+      </address>
+    </footer>
+  </div>
+  <!-- jQuery CDN -->
+  <script src="../js/jquery-1.12.4.js"></script>
+  <!-- slick.js -->
+  <script src="../slick/slick.js"></script>
+  <script src="../js/custom.js"></script>
+  <script>
+    $('.slider-for').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: true,
+      autoplay: true,
+      asNavFor: '.slider-nav'
+    });
+
+    $('.slider-nav').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      asNavFor: '.slider-for',
+      dots: true,
+      centerMode: true,
+      focusOnSelect: true,
+      draggable: true,
+      infinite: true,
+      centerPadding: '0px',
+
+      responsive: [{
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+
+    });
+  </script>
+</body>
+
+</html>

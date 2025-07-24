@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vuumpet_main</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../css/vuumpet_main.css">
+    <!-- 폰트어썸CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <!-- SCRIPT-->
+    <script src="../js/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+
+        <!--header-->
+        <header>
+            <!--nav(메뉴)-->
+            <div class="nav">
+                <div class="gnb_left">
+                    <ul class="nav_left">
+                        <li class="nav_list"><a href="./vuumpet_login.html" target="">로그인</a></li>
+                        <li class="nav_list"><a href="./vuumpet_join.html" target="">회원가입</a></li>
+                        <li class="nav_list"><a href="#" target="">주문조회</a></li>
+                        <li class="nav_list"><a href="#" target="">마이페이지</a></li>
+                    </ul>
+                </div>
+                <div class="gnb_right">
+                    <div class="nav_right">
+                        <div class="search">
+                            <a href="#" target="">
+                                <img class="search_icon" src="../img/search_icon.png" alt="검색바">
+                            </a>
+                        </div>
+
+                        <div class="basket">
+                            <a href="#" target="">
+                                <img class="basket_img" src="../img/basket.png" alt="장바구니">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--로고-->
+                <h1 id="logo">
+                    <a href="/vuumpet/vuumpet_main.html" target="">
+                        <img class="logo_img" src="../img/logo.png" alt="로고">
+                    </a>
+                </h1>
+                <div class="cnb">
+                    <!--전체보기버튼-->
+                    <div class="view_all">
+                        <input type="checkbox" id="trigger">
+                        <label for="trigger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </label>
+                        <div class="allmenu">
+                            <ul class="menuArchive">
+                                <li>강아지</li>
+                                <li>사료</li>
+                                <li>간식</li>
+                                <li>건강관리</li>
+                                <li>위생/배변</li>
+                                <li>미용/목욕</li>
+                                <li>급식/급수기</li>
+                                <li>장난감</li>
+                                <li>하우스</li>
+                                <li>이동장</li>
+                                <li>패션/의류</li>
+                                <li>목줄/하네스</li>
+                            </ul>
+                            <ul class="menuArchive">
+                                <li>고양이</li>
+                                <li>사료</li>
+                                <li>간식</li>
+                                <li>건강관리</li>
+                                <li>모래</li>
+                                <li>화장실/위생</li>
+                                <li>미용/목욕</li>
+                                <li>급식/급수기</li>
+                                <li>장난감/캣닢</li>
+                                <li>스크래쳐/캣타워</li>
+                                <li>하우스</li>
+                                <li>이동장</li>
+                                <li>패션/의류</li>
+                                <li>목줄/하네스</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="category">
+                        <!--카테고리-->
+                        <ul class="ctgr">
+                            <li class="ctgr_txt"><a href="vuumpet_main.html" target="">home</a></li>
+                            <li class="ctgr_txt"><a href="#" target="">실시간 인기상품</a></li>
+                            <li class="ctgr_txt"><a href="#" target="">특가상품</a></li>
+                            <li class="ctgr_txt"><a href="#" target="">이벤트</a></li>
+                            <li class="ctgr_txt"><a href="#" target="">스탬프샵</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- 컨텐츠1 시작 -->
+        <section class="content1">
+            <div class="mainBanner">
+                <div class="autogallery">
+                    <ul>
+                        <li><a href="./ointment.html" target="">
+                                <span class="autogallery_txt">
+                                    <p>붐펫 발바닥 수딩 밤!</p>
+                                    <p>신상품 기념이벤트</p><br><br>
+                                    <p>출시기념 40%할인+사은품 증정</p>
+                                </span>
+                            </a></li>
+                        <li><span class="autogallery_txt">
+                                <p>지루한 우리아이에게 새 장난감을!</p>
+                                <p>1+1&nbsp;2+1 증정 행사 진행중!!</p><br>
+                                <p>입고할인까지 더블 혜택 받아가세요~!</p>
+                            </span></li>
+                        <li><span class="autogallery_txt">
+                                <p>#마약쿠션 #숨숨집 #마카롱쿠션</p>
+                                <p>신상 입고 할인&시즌 상품 할인!</p><br>
+                                <p>폭닥폭닥 마약쿠션 할인20~40%</p>
+                            </span></li>
+                        <li><span class="autogallery_txt">
+                                <p>#한정수량 #입박세일</p>
+                                <p>임박상품 선착순 특가!!</p><br>
+                                <p>알짜배기 상품 한정수량이니 서두르세요!</p>
+                            </span></li>
+                        <li><span class="autogallery_txt">
+                                <p>첫 주문 즉시 사용가능한 5,000원 쿠폰 증정!</p>
+                                <p>신규가입시 990원!</p><br>
+                                <p>신규가입 후 웰컴상품을 990원에 구매할 수 있어요!</p>
+                            </span></li>
+                </div>
+                <div class="centerBtn">
+                    <span class="arrow arrowLeft overOut"></span>
+                    <span class="arrow arrowRight overOut"></span>
+                </div>
+                <div class="bcon">
+                    <div class="items">
+                        <ul>
+                            <li class="on overOut"></li>
+                            <li class="overOut"></li>
+                            <li class="overOut"></li>
+                            <li class="overOut"></li>
+                            <li class="overOut"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--콘텐츠 2 시작-->
+        <section class="content2">
+            <div class="sec_title">
+                <div class="sec_bar"></div>
+                <p>상품을 추천해드릴게요! 우리 아이는?</p>
+            </div>
+            <div class="pet_img">
+                <div class="petimg_left">
+                    <a href="#" target="">
+                        <img class="con_2_dog" src="../img/con2_dog.png" alt="강아지사진">
+                        <div class="con_2_dogtxt">
+                            <ul>
+                                <li>강아지</li>
+                                <li>반려견 전용 제품</li>
+                            </ul>
+                        </div>
+                        <a href="#" target="">
+                            <button class="dog_more">more</button>
+                        </a>
+                    </a>
+                </div>
+                <div class="petimg_right">
+                    <a href="#">
+                        <img class="con_2_cat" src="../img/con2_cat.png" alt="고양이사진">
+                        <div class="con_2_cattxt">
+                            <ul>
+                                <li>고양이</li>
+                                <li>반려묘 전용 제품</li>
+                            </ul>
+                        </div>
+                        <a href="#" target="">
+                            <button class="cat_more">more</button>
+                        </a>
+                    </a>
+                </div>
+
+
+            </div>
+        </section>
+        <!-- 컨텐츠3시작 -->
+        <section class="content3">
+            <div class="con3">
+                <div class="sec_title">
+                    <div class="sec_bar"></div>
+                    <p>실시간 입고 할인!</p>
+                </div>
+                <div class="products">
+                    <ul class="p_list_wrap">
+                        <li class="p_list">
+                            <!--물건1-->
+                            <a href="#" target="">
+                                <img class="p_list_img" src="../img/p_list_img_1.jpg" alt="소간쿠키">
+                                <div class="p_t">
+                                    <h2>소 간 쿠키 200g</h2>
+                                    <p class="low_price">8,000원</p>
+                                    <p class="price">5,900원</p>
+                                    <div class="p_icon">
+                                        <img class="p_basket" src="../img/basket.png" alt="장바구니">
+                                        <img class="p_heart" src="../img/heart.png" alt="찜하기">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="p_list">
+                            <!--물건2-->
+                            <a href="ointment.html" target="">
+                                <img class="p_list_img" src="../img/p_list_img_2.jpg" alt="붐펫 수딩연고">
+                                <div class="p_t">
+                                    <h2>붐펫수딩 연고</h2>
+                                    <p class="low_price">12,900원</p>
+                                    <p class="price">9,900원</p>
+                                    <div class="p_icon">
+                                        <img class="p_basket" src="../img/basket.png" alt="장바구니">
+                                        <img class="p_heart" src="../img/heart.png" alt="찜하기">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="p_list">
+                            <!--물건3-->
+                            <a href="#" target="">
+                                <img class="p_list_img" src="../img/p_list_img_3.jpg" alt="펫샴푸바(10개입)">
+                                <div class="p_t">
+                                    <h2>다시마 샴푸바(150g)</h2>
+                                    <p class="low_price">9,000원</p>
+                                    <p class="price">6,900원</p>
+                                    <div class="p_icon">
+                                        <img class="p_basket" src="../img/basket.png" alt="장바구니">
+                                        <img class="p_heart" src="../img/heart.png" alt="찜하기">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="p_list">
+                            <!--물건4-->
+                            <a href="#" target="">
+                                <img class="p_list_img" src="../img/p_list_img_4.jpg" alt="마카롱쿠션">
+                                <div class="p_t">
+                                    <h2>마카롱 쿠션</h2>
+                                    <p class="low_price">18,000원</p>
+                                    <p class="price">12,900원</p>
+                                    <div class="p_icon">
+                                        <img class="p_basket" src="../img/basket.png" alt="장바구니">
+                                        <img class="p_heart" src="../img/heart.png" alt="찜하기">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+
+                        <li class="p_list">
+                            <!--물건5-->
+                            <a href="#" target="">
+                                <img class="p_list_img" src="../img/p_list_img_5.jpg" alt="초록 벨벳 쿠션">
+                                <div class="p_t">
+                                    <h2>극세사 마약 방석</h2>
+                                    <p class="low_price">24,000원</p>
+                                    <p class="price">19,900원</p>
+                                    <div class="p_icon">
+                                        <img class="p_basket" src="../img/basket.png" alt="장바구니">
+                                        <img class="p_heart" src="../img/heart.png" alt="찜하기">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="p_list">
+                            <!--물건6-->
+                            <a href="#" target="">
+                                <img class="p_list_img" src="../img/p_list_img_6.jpg" alt="덴탈 토이">
+                                <div class="p_t">
+                                    <h2>캣닙 덴탈 토이 2종</h2>
+                                    <p class="low_price">6,000원</p>
+                                    <p class="price">4,500원</p>
+                                    <div class="p_icon">
+                                        <img class="p_basket" src="../img/basket.png" alt="장바구니">
+                                        <img class="p_heart" src="../img/heart.png" alt="찜하기">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="p_list">
+                            <!--물건7-->
+                            <a href="#" target="">
+                                <img class="p_list_img" src="../img/p_list_img_7.jpg" alt="펫모차">
+                                <div class="p_t">
+                                    <h2>2 in 1 펫모차 </h2>
+                                    <p class="low_price">12,9000원</p>
+                                    <p class="price">8,9000원</p>
+                                    <div class="p_icon">
+                                        <img class="p_basket" src="../img/basket.png" alt="장바구니">
+                                        <img class="p_heart" src="../img/heart.png" alt="찜하기">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="p_list">
+                            <!--물건8-->
+                            <a href="#" target="">
+                                <img class="p_list_img" src="../img/p_list_img_8.jpg" alt="열빙어80g">
+                                <div class="p_t">
+                                    <h2>열빙어 80g</h2>
+                                    <p class="low_price">11,000원</p>
+                                    <p class="price">7,900원</p>
+                                    <div class="p_icon">
+                                        <img class="p_basket" src="../img/basket.png" alt="장바구니">
+                                        <img class="p_heart" src="../img/heart.png" alt="찜하기">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--더보기버튼-->
+                    <div class="view_more">
+                        <button type="button" class="more_1">more</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 컨텐츠4 시작 -->
+        <section class="content4">
+            <div class="sec_title">
+                <div class="sec_bar"></div>
+                <p>REVIEW</p>
+            </div>
+            <div class="review">
+                <ul>
+                    <li class="review_list">
+                        <a href="#" target="">
+                            <img class="rev_img" src="../img/review_img1.jpg" alt="리뷰이미지1">
+                            <div class="rev_txt">
+                                <p class="rev_title">여름이라 사료를 안먹어서 구매했는데 생각보다 잘 먹어요. </p>
+                                <p class="rev_user">네이버페이 구매자 김희진</p>
+                                <ul class="thumnail">
+                                    <li><a href="#" target=""><img class="thum1" src="../img/thumbnail_1.jpg"
+                                                alt="펫밀크 썸네일"></a></li>
+                                    <li class="thumnail_txt">홍삼 펫밀크</p>
+                                        <span class="thumnail_txt_left">리뷰<strong> 26</strong></span>
+                                        <span class="thumnail_txt_right">평점<strong> 5.0</strong></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="review_list">
+                        <a href="#" target="">
+                            <img class="rev_img" src="../img/review_img2.jpg" alt="리뷰이미지2">
+                            <div class="rev_txt">
+                                <p class="rev_title">새끼 강아지 장난감 구매했어요. 아직 잘 갖고 놀지 못하는데 귀엽습니다. </p>
+                                <p class="rev_user">네이버페이 구매자 김희진</p>
+                                <ul class="thumnail">
+                                    <li><a href="#" target=""><img class="thum1" src="../img/thumbnail_1.jpg"
+                                                alt="펫밀크 썸네일"></a></li>
+                                    <li class="thumnail_txt">홍삼 펫밀크</p>
+                                        <span class="thumnail_txt_left">리뷰<strong> 26</strong></span>
+                                        <span class="thumnail_txt_right">평점<strong> 5.0</strong></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="review_list">
+                        <a href="#" target="">
+                            <img class="rev_img" src="../img/review_img3.jpg" alt="리뷰이미지3">
+                            <div class="rev_txt">
+                                <p class="rev_title">애들이 잘 먹어요. 편식할까봐 걱정했는데 잘 먹네요. </p>
+                                <p class="rev_user">네이버페이 구매자 김희진</p>
+                                <ul class="thumnail">
+                                    <li><a href="#" target=""><img class="thum1" src="../img/thumbnail_1.jpg"
+                                                alt="펫밀크 썸네일"></a></li>
+                                    <li class="thumnail_txt">홍삼 펫밀크</p>
+                                        <span class="thumnail_txt_left">리뷰<strong> 26</strong></span>
+                                        <span class="thumnail_txt_right">평점<strong> 5.0</strong></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="review_list">
+                        <a href="#" target="">
+                            <img class="rev_img" src="../img/review_img4.jpg" alt="리뷰이미지4">
+                            <div class="rev_txt">
+                                <p class="rev_title">푹신해서 좋은가봐요. 서로 앉겠다고 올라가 있습니다.</p>
+                                <p class="rev_user">네이버페이 구매자 김희진</p>
+                                <ul class="thumnail">
+                                    <li><a href="#" target=""><img class="thum1" src="../img/thumbnail_1.jpg"
+                                                alt="펫밀크 썸네일"></a></li>
+                                    <li class="thumnail_txt">홍삼 펫밀크</p>
+                                        <span class="thumnail_txt_left">리뷰<strong> 26</strong></span>
+                                        <span class="thumnail_txt_right">평점<strong> 5.0</strong></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="review_list">
+                        <a href="#" target="">
+                            <img class="rev_img" src="../img/review_img5.jpg" alt="리뷰이미지5">
+                            <div class="rev_txt">
+                                <p class="rev_title">터그를 좋아해서 구매했습니다. 첫날부터 찢어져라 갖고 놀고 있어요.</p>
+                                <p class="rev_user">네이버페이 구매자 김희진</p>
+                                <ul class="thumnail">
+                                    <li><a href="#" target=""><img class="thum1" src="../img/thumbnail_1.jpg"
+                                                alt="펫밀크 썸네일"></a></li>
+                                    <li class="thumnail_txt">홍삼 펫밀크</p>
+                                        <span class="thumnail_txt_left">리뷰<strong> 26</strong></span>
+                                        <span class="thumnail_txt_right">평점<strong> 5.0</strong></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!--더보기버튼-->
+            <div class="view_more">
+                <button type="button" class="more_1">more</button>
+            </div>
+        </section>
+
+        <!--풋터 시작-->
+        <div class="footer">
+            <div class="footer_guide">
+                <div class="footer_left">
+                    <a href="vuumpet_main.html">
+                        <img class="footer_logo" src="../img/logo.png" alt="로고 이미지">
+                    </a>
+                    <div class="copyright">COPYRIGHT©VUUMPET.ALL RIGHTS RESERVED.</div>
+                </div>
+                <div class="footer_right">
+                    <ul>
+                        <li class="footer_r1">
+                            <div class="footer_icon">
+                                <img src="../img/sns_icon_1.png" alt="카카오톡아이콘">
+                                <img src="../img/sns_icon_2.png" alt="인스타그램아이콘">
+                                <img src="../img/sns_icon_3.png" alt="페이스북아이콘">
+                            </div>
+                            <div class="about">
+                                <p>ABOUT USE</p>
+                                <p>TERMS OF USE</p>
+                                <p>PRIVACY</p>
+                            </div>
+                        </li>
+                        <li class="footer_r2">
+                            <div class="business">
+                                <p>사업문의</p>
+                                <p>yj@vuumpet.kr</p>
+                            </div>
+                            <div class="cs_center">
+                                <p>C.S CENTER</lpi>
+                                    <p>T. 02 555 8292</p>
+                                    <p>AM 09:00 ~ PM 18:00</p>
+                                    <p>PM 12:00 ~ 13:00 (Lunch)</p>
+                                    <p>SAT, SUN, HOLIDAY OFF</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--전체 끝-->
+    <script src="../js/vuumpet_main.js"></script>
+</body>
+
+</html>

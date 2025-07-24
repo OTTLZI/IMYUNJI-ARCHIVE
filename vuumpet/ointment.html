@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ointment</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../css/oinment_layout.css">
+    <!-- 제이쿼리 -->
+    <script src="../js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <!--header-->
+        <header>
+            <!--nav(메뉴)-->
+            <div class="nav">
+                <div class="gnb_left">
+                    <ul class="nav_left">
+                        <li class="nav_list"><a href="vuumpet_login.html" target="">로그인</a></li>
+                        <li class="nav_list"><a href="vuumpet_join.html" target="">회원가입</a></li>
+                        <li class="nav_list"><a href="#" target="">주문조회</a></li>
+                        <li class="nav_list"><a href="#" target="">마이페이지</a></li>
+                    </ul>
+                </div>
+                <div class="gnb_right">
+                    <div class="nav_right">
+                        <div class="search">
+                            <a href="#" target="">
+                                <img class="search_icon" src="../img/search_icon.png" alt="검색바">
+                            </a>
+                        </div>
+                        <div class="basket">
+                            <a href="#" target="">
+                                <img class="basket_img" src="../img/basket.png" alt="장바구니">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--로고-->
+                <h1 id="logo">
+                    <a href="vuumpet_main.html" target="">
+                        <img class="logo_img" src="../img/logo.png" alt="로고">
+                    </a>
+                </h1>
+                <div class="cnb">
+                    <!--전체보기버튼-->
+                    <div class="view_all">
+                        <a href="#" target="">
+                            <img class="view_all_icon" src="../img/menu.png" alt="메뉴 전체보기">
+                        </a>
+                    </div>
+                    <div class="category">
+                        <!--카테고리-->
+                        <ul class="ctgr">
+                            <li class="ctgr_txt"><a href="vuumpet_main.html" target="">home</a></li>
+                            <li class="ctgr_txt"><a href="#" target="">실시간 인기상품</a></li>
+                            <li class="ctgr_txt"><a href="#" target="">특가상품</a></li>
+                            <li class="ctgr_txt"><a href="#" target="">이벤트</a></li>
+                            <li class="ctgr_txt"><a href="#" target="">스탬프샵</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- 상품 대표 이미지 및 옵션창 -->
+        <section id="container">
+            <div class="main_img">
+                <img src="../img/ointment_mockup.jpg" alt="수딩밤대표사진">
+            </div>
+            <div id="oder_form_wrap">
+                <div class="oder_form">
+                    <ul class="title_section">
+                        <li>붐펫 수딩연고(40g)</li>
+                        <li><img src="../img/heart.png" alt="찜하기"></li>
+                        <li><img src="../img/share.png" alt="공유하기"></li>
+                    </ul>
+                    <div class="info_section">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>판매가</th>
+                                    <td>12,900원</td>
+                                </tr>
+                                <tr>
+                                    <th>할인가</th>
+                                    <td>9,900원</td>
+                                </tr>
+                                <tr>
+                                    <th>배송비</th>
+                                    <td>3,000원 (50,000원 이상 구매 시 무료)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="option_section">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th class="option_title">붐펫 수딩연고(40g)</th>
+                                    <td class="option_selec">
+                                        <div class="updown">
+                                            <input type="number" min="1" max="100" step="1" value="1">
+                                        </div>
+                                    </td>
+                                    <td><span class="option_price">9900</span>원</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="total">
+                        <strong class="total_txt">TOTAL:</strong>
+                        <span class="total_price">9,900</span><span>원</span>
+                    </div>
+                    <div class="oder_btn">
+                        <button id="oder_basket" type="button" onclick="alert('장바구니에 물건이 담겼습니다!')">장바구니</button>
+                        <button id="buy" type="button">구매하기</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 상품 상세정보 -->
+        <section id="pd_infor">
+            <ul>
+                <li class="pd_infor_nav">상세정보</li>
+                <li class="pd_infor_nav">구매가이드</li>
+                <li class="pd_infor_nav">구매후기</li>
+                <li class="pd_infor_nav">상품문의</li>
+            </ul>
+            <div class="pd_detail"></div>
+            <div class="pd_guide">
+                <ul>
+                    <li class="payment_info">
+                        <p class="pd_guide_bigtxt">상품 결제정보</p>
+                        <span class="pd_guide_smalltxt">고액결제의 경우 안전을 위해 카드사에서 확인전화를 드릴 수도 있습니다. <br>확인과정에서 도난 카드의 사용이나
+                            타인 명의의 주문등 정상적인 주문이 아니라고 판단될 경우 임의로 주문을 보류 또는 취소할 수 있습니다.<br>
+                            무통장 입금은 상품 구매 대금은 PC뱅킹, 인터넷뱅킹, 텔레뱅킹 혹은 가까운 은행에서 직접 입금하시면 됩니다. <br>
+                            주문시 입력한 입금자명과 실제입금자의 성명이 반드시 일치하여야 하며, 7일 이내로 입금을 하셔야 하며 입금되지 않은 주문은 자동취소 됩니다.</span>
+                    </li>
+                    <li class="shipping_info">
+                        <br>
+                        <p class="pd_guide_bigtxt">배송안내</p>
+                        <span class="pd_guide_smalltxt">
+                            택배발송으로 영업일 기준 2~3일 소요될 수 있습니다.<br>
+                            일부 제품은 주문제작 상품으로 배송기간이 다소 소요될 수 있습니다.<br>
+                            주문폭주, 일시적 재고부족, 기상이변, 악천후, 천재지변 등에 의한 배송지연이 발생할 수 있습니다.<br>
+                            배송 특성 상 당일 배송 취소 및 수취 불가의 경우 왕복배송비가 청구됩니다.<br>
+                            **네이버 페이구매시: 상품별 출고지/수거지가 상이하여 교환, 반품은 자동수거가 불가 하므로 고객센터로 문의 부탁드립니다.
+                        </span>
+                    </li>
+                    <li class="exchange_info">
+                        <br>
+                        <p class="pd_guide_bigtxt">교환 및 반품안내</p>
+                        <span class="pd_guide_smalltxt">
+                            <strong>교환 및 반품 주소</strong><br>
+                            일산센터: 경기도 고양시 일산동구 문원길 102번 길 107-1 (설문동)<br>
+                            <strong>교환 및 반품이 가능한 경우</strong><br>
+                            - 상품을 공급 받으신 날로부터 7일이내. 단, 가전제품의
+                            경우 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우에는 교환/반품이 불가능합니다.<br>
+                            - 공급받으신 상품 및 용역의 내용이 표시.광고 내용과 다르거나 다르게 이행된 경우에는 공급받은 날로부터 3월이내, 그사실을 알게 된 날로부터 30일이내<br>
+                            <strong>교환 및 반품이 불가능한 경우</strong><br>
+                            - 고객님의 책임 있는 사유로 상품등이 멸실 또는 훼손된 경우. 단, 상품의 내용을 확인하기 위하여 포장 등을 훼손한 경우는 제외<br>
+                            - 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우 (예 : 가전제품, 식품, 음반 등, 단 액정화면이 부착된 노트북, LCD모니터, 디지털 카메라 등의
+                            불량화소에
+                            따른 반품/교환은 제조사 기준에 따릅니다.)<br>
+                            - 고객님의 사용 또는 일부 소비에 의하여 상품의 가치가 현저히 감소한 경우 단, 화장품등의 경우 시용제품을 제공한 경우에 한 합니다.<br>
+                            - 시간의 경과에 의하여 재판매가 곤란할 정도로 상품등의 가치가 현저히 감소한 경우<br>
+                            - 복제가 가능한 상품등의 포장을 훼손한 경우<br>
+                            (자세한 내용은 고객만족센터 1:1 E-MAIL상담을 이용해 주시기 바랍니다.)<br>
+                            ※ 고객님의 마음이 바뀌어 교환, 반품을 하실 경우 상품반송 비용은 고객님께서 부담하셔야 합니다.(색상 교환, 사이즈 교환 등 포함)
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- 구매후기 -->
+        <section id="pd_review">구매후기&nbsp&nbsp<span class="pd_nav_count">[2]</span>
+            <div class="review_score_sec">
+                <ul>
+                    <li>리뷰평점<br>
+                        <strong>4.5</strong><br>
+                        <div class="score_star">
+                            <img src="../img/star.png" alt="별">
+                            <img src="../img/star.png" alt="별">
+                            <img src="../img/star.png" alt="별">
+                            <img src="../img/star.png" alt="별">
+                            <img src="../img/half_star.png" alt="반쪽별">
+                        </div>
+                    </li>
+                    <li>포토리뷰
+                        <div id="photo_rev">
+                            <a href="#"><img class="photo_rev_arrowLeft" src="../img/arrowLeft.png" alt="이전 버튼"></a>
+                            <ul class="photo_rev_list">
+                                <li><img src="../img/ointment_rev_img1.png" alt="수딩밤 리뷰이미지1"></li>
+                                <li><img src="../img/ointment_rev_img2.png" alt="수딩밤 리뷰이미지2"></li>
+                            </ul>
+                            <a href="#"><img class="photo_rev_arrowright" src="../img/arrowRight.png" alt="다음 버튼"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="review_form">
+                <p>내 후기 작성하기</p>
+                <div id="rev_txt_count">(0 / 500)</div>
+                <textarea id="rev_txt" name="rev_txt" cols="30" rows="10" placeholder="리뷰를 작성해주세요."></textarea>
+                <!-- 리뷰 작성칸 아래 옵션 -->
+                <div class="rev_form_option">
+                    <button class="add_imgbtn" type="button"><span>사진 추가하기<img class="add_img" src="../img/add_img.png"
+                                alt="사진 추가하기"></span>
+                    </button>
+                    <div class="selectbox">
+                        <label for="ex_select">별을 선택하여 만족도를 알려주세요.</label>
+                        <select id="ex_select">
+                            <option selected>아주 좋아요 <a href="#"><img src="../img/star5.png" alt="별 다섯개"></a></option>
+                            <option>마음에 들어요</option>
+                            <option>보통이에요</option>
+                            <option>그냥 그래요</option>
+                            <option>별로에요</option>
+                        </select>
+                    </div>
+                    <button class="rev_submit" type="submit">등록하기
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- 상품문의 -->
+        <section id="pd_qna">상품문의&nbsp&nbsp<span class="pd_nav_count">[0]</span>
+            <div class="pd_qna_sec">
+                <p>등록된 문의글이 없습니다.</p>
+                <button class="pd_qna_btn" type="button">문의하기</button>
+            </div>
+        </section>
+        <!--풋터 시작-->
+        <div class="footer">
+            <div class="footer_guide">
+                <div class="footer_left">
+                    <a href="vuumpet_main.html">
+                        <img class="footer_logo" src="../img/logo.png" alt="로고 이미지">
+                    </a>
+                    <div class="copyright">COPYRIGHT©VUUMPET.ALL RIGHTS RESERVED.</div>
+                </div>
+                <div class="footer_right">
+                    <ul>
+                        <li class="footer_r1">
+                            <div class="footer_icon">
+                                <img src="../img/sns_icon_1.png" alt="카카오톡아이콘">
+                                <img src="../img/sns_icon_2.png" alt="인스타그램아이콘">
+                                <img src="../img/sns_icon_3.png" alt="페이스북아이콘">
+                            </div>
+                            <div class="about">
+                                <p>ABOUT USE</p>
+                                <p>TERMS OF USE</p>
+                                <p>PRIVACY</p>
+                            </div>
+                        </li>
+                        <li class="footer_r2">
+                            <div class="business">
+                                <p>사업문의</p>
+                                <p>yj@vuumpet.kr</p>
+                            </div>
+                            <div class="cs_center">
+                                <p>C.S CENTER</lpi>
+                                    <p>T. 02 555 8292</p>
+                                    <p>AM 09:00 ~ PM 18:00</p>
+                                    <p>PM 12:00 ~ 13:00 (Lunch)</p>
+                                    <p>SAT, SUN, HOLIDAY OFF</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--전체 끝  -->
+    </div>
+    <!-- 제이쿼리 -->
+    <script src="../js/layout.js"></script>
+</body>
+
+</html>

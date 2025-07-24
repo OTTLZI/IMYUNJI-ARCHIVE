@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vuumpet_join</title>
+    <link rel="stylesheet" href="../css/vuumpet_join.css">
+</head>
+
+<body>
+    <div id="wrap">
+
+        <!--header-->
+        <header>
+            <!--nav(메뉴)-->
+            <div class="nav">
+                <div class="gnb_left">
+                    <ul class="nav_left">
+                        <li class="nav_list"><a href="vuumpet_login.html" target="">로그인</a></li>
+                        <li class="nav_list"><a href="vuumpet_join.html" target="">회원가입</a></li>
+                        <li class="nav_list"><a href="#" target="">주문조회</a></li>
+                        <li class="nav_list"><a href="#" target="">마이페이지</a></li>
+                    </ul>
+                </div>
+                <div class="gnb_right">
+                    <div class="nav_right">
+                        <div class="search">
+                            <a href="#" target="">
+                                <img class="search_icon" src="../img/search_icon.png" alt="검색바">
+                            </a>
+                        </div>
+                        <div class="basket">
+                            <a href="#" target="">
+                                <img class="basket_img" src="../img/basket.png" alt="장바구니">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--로고-->
+                <h1 id="logo">
+                    <a href="vuumpet_main.html" target="">
+                        <img class="logo_img" src="../img/logo.png" alt="로고">
+                    </a>
+                </h1>
+                <div class="cnb">
+                    <!--전체보기버튼-->
+                    <div class="view_all">
+                        <a href="#" target="">
+                            <img class="view_all_icon" src="../img/menu.png" alt="메뉴 전체보기">
+                        </a>
+                    </div>
+                    <div class="category">
+                        <!--카테고리-->
+                        <ul class="ctgr">
+                            <li class="ctgr_txt"><a href="vuumpet_main.html" target="">home</a></li>
+                            <li class="ctgr_txt"><a href="#" target="">실시간 인기상품</a></li>
+                            <li class="ctgr_txt"><a href="#" target="">특가상품</a></li>
+                            <li class="ctgr_txt"><a href="#" target="">이벤트</a></li>
+                            <li class="ctgr_txt"><a href="#" target="">스탬프샵</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- 컨텐츠1 시작 -->
+        <section class="contents1">
+            <div class="titlearea">
+                <h2>회원가입</h2>
+            </div>
+            <!--sns계정으로 회원가입-->
+            <div id="sns_login">
+                <div class="sns_login_top">
+                    <h3>sns계정으로 로그인하기</h3>
+                </div>
+                <div class="sns_login_bt">
+                    <ul class="combine"><a hreg="#">
+                            <li><img class="kakao_icon" src="../img/sns_icon_1.png" alt="kakao"></li>
+                            <li>카카오로 로그인</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+
+            <!--아이디 및 정보 입력칸-->
+            <div class="base">
+                <table border="1">
+                    <caption>회원 기본정보</caption>
+                    <colgroup>
+                        <col style="width: 150px;">
+                        <col style="width: 1150px;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">아이디</th>
+                            <td>
+                                <input id="member_id" name="member_id" class="inputtypetext" value="" type="text">
+                                <span id="idmsg"> (영문소문자/숫자, 4~16자)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">비밀번호</th>
+                            <td>
+                                <input id="passwd" name="passwd" value="" type="password">
+                                <span id="idmsg">(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">비밀번호 확인
+                            </th>
+                            <td>
+                                <input id="passwd_confirm" name="passwd_confirm" value type="password">
+                                <span id="pwConfirmMsg"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" id="nametitle">
+                                이름
+                            </th>
+                            <td>
+                                <input id="name" name="name" type="text"> *14세 미만 사용자는 법정 대리인 동의가 필요합니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">휴대전화
+                            </th>
+                            <td>
+                                <select id="mobile1" name="mobile[]">
+                                    <option value="010">010</option>
+                                    <option value="011">011</option>
+                                    <option value="016">016</option>
+                                    <option value="017">017</option>
+                                    <option value="018">018</option>
+                                    <option value="019">019</option>
+                                </select>
+                                -
+                                <input id="mobile2" name="mobile[]" maxlength="4" value="" type="text">
+                                -
+                                <input id="mobile3" name="mobile[]" maxlength="4" fw-filter="isNumber" fw-label="휴대전화"
+                                    fw-alone="N" fw-msg="" value="" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">이메일</th>
+                            <td>
+                                <input id="email1" name="email1" value="" type="text" class="">
+                                @
+                                <select id="email_selc" name="email_selc">
+                                    <option value="1">직접입력</option>
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="daum.net">daum.net</option>
+                                    <option value="hanmail.net">hanmail.net</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="hotmail.com">hotmail.com</option>
+                                    <option value="dreamwiz.com">dreamwiz.com</option>
+                                    <option value="freechal.com">freechal.com</option>
+                                    <option value="hanmir.com">hanmir.com</option>
+                                </select>
+                                <span id="emailMsg"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="contents2">
+            <div class="titlearea2">
+                <h2>약관동의</h2>
+            </div>
+            <div id="bigbox">
+                <div class="agreement_head">
+                    <input type="checkbox" id="agreeAllChecked">
+                    <label for="agreeAllChecked">이용약관 및 개인정보수집 및 이용, 쇼핑정보 수신(선택)에 모두 동의합니다.</label>
+                </div>
+                <div class="agreement_box">
+                    <p class="box_title">[필수]이용약관 동의</p>
+                    <div class="smallbox">
+                        <div class="boxtext">
+                            <p>제1조(목적)
+                                이 약관은 (주)@@@@(전자상거래 사업자)이 운영하는 @@@@@(이하 “몰”이라 한다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 한다)를 이용함에
+                                있어 사이버 몰과 이용자의 권리.의무 및 책임사항을 규정함을 목적으로 합니다.
+                                ※「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 준용합니다.」</p>
+                        </div>
+                    </div>
+                    <p class="check">
+                        <label for="agree_check">이용약관에 동의하십니까?</label>
+                        <input id="agree_check" name="agree_service_check[]" class="checkbox" value="1" type="checkbox">
+                    </p>
+                </div>
+                <div class="agreement_box">
+                    <p class="box_title">[필수] 개인정보 수집 및 이용 동의</p>
+                    <div class="smallbox">
+                        <div class="boxtext">
+                            <p>제1조(목적)
+                                이 약관은 (주)@@@@(전자상거래 사업자)이 운영하는 @@@@@(이하 “몰”이라 한다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 한다)를 이용함에
+                                있어 사이버 몰과 이용자의 권리.의무 및 책임사항을 규정함을 목적으로 합니다.
+                                ※「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 준용합니다.」</p>
+                        </div>
+                    </div>
+                    <p class="check">
+                        <label for="agree_check2">개인정보 수집 및 이용에 동의하십니까?</label>
+                        <input id="agree_check2" name="agree_service_check[]" class="checkbox" type="checkbox">
+                    </p>
+                </div>
+                <div class="agreement_box">
+                    <p class="box_title">[선택] 쇼핑정보 수신 동의</p>
+                    <div class="smallbox">
+                        <div class="boxtext">
+                            <p>제1조(목적)
+                                이 약관은 (주)@@@@(전자상거래 사업자)이 운영하는 @@@@@(이하 “몰”이라 한다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 한다)를 이용함에
+                                있어 사이버 몰과 이용자의 권리.의무 및 책임사항을 규정함을 목적으로 합니다.
+                                ※「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 준용합니다.」</p>
+                        </div>
+                    </div>
+                    <p class="check">
+                        <label for="agree_check3">SMS 수신을 동의하십니까?</label>
+                        <input id="agree_check3" name="agree_service_check[]" class="checkbox" value="1"
+                            type="checkbox">
+                    </p>
+                    <p class="check">
+                        <label for="agree_check4">이메일 수신을 동의하십니까?</label>
+                        <input id="agree_check4" name="agree_service_check[]" class="checkbox" value="1"
+                            type="checkbox">
+                    </p>
+                </div>
+            </div>
+            <!--회원가입 완료 버튼-->
+            <div class="bt_wrap">
+                <button type="reset" id="cancel">취소</button>
+                <button type="button" id="joinOkBtn">회원가입</button>
+            </div>
+        </section>
+
+        <!--풋터 시작-->
+        <div class="footer">
+            <div class="footer_guide">
+                <div class="footer_left">
+                    <a href="vuumpet_main.html">
+                        <img class="footer_logo" src="../img/logo.png" alt="로고 이미지">
+                    </a>
+                    <div class="copyright">COPYRIGHT©VUUMPET.ALL RIGHTS RESERVED.</div>
+                </div>
+                <div class="footer_right">
+                    <ul>
+                        <li class="footer_r1">
+                            <div class="footer_icon">
+                                <img src="../img/sns_icon_1.png" alt="카카오톡아이콘">
+                                <img src="../img/sns_icon_2.png" alt="인스타그램아이콘">
+                                <img src="../img/sns_icon_3.png" alt="페이스북아이콘">
+                            </div>
+                            <div class="about">
+                                <p>ABOUT USE</p>
+                                <p>TERMS OF USE</p>
+                                <p>PRIVACY</p>
+                            </div>
+                        </li>
+                        <li class="footer_r2">
+                            <div class="business">
+                                <p>사업문의</p>
+                                <p>yj@vuumpet.kr</p>
+                            </div>
+                            <div class="cs_center">
+                                <p>C.S CENTER</lpi>
+                                    <p>T. 02 555 8292</p>
+                                    <p>AM 09:00 ~ PM 18:00</p>
+                                    <p>PM 12:00 ~ 13:00 (Lunch)</p>
+                                    <p>SAT, SUN, HOLIDAY OFF</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

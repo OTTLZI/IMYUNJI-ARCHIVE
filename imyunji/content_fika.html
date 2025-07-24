@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IMYUNJI PORTFOLIO</title>
+  <!-- 폰트어썸CDN-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <!-- css -->
+  <link rel="stylesheet" href="../css/content_fika.css">
+  <style>
+  </style>
+  <!-- slick.css -->
+  <link rel="stylesheet" href="../slick/slick.css">
+  <link rel="stylesheet" href="../slick/slick-theme.css">
+</head>
+
+<body>
+  <div id="wrap">
+    <header>
+      <div class="pinned_top">
+        <!-- side_nav -->
+        <div class="top_item">
+          <input type="checkbox" id="trigger">
+          <label for="trigger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <ul class="sidebar">
+            <li>
+              <a href="#">Web publishing</a>
+              <ul class="sub">
+                <li><a href="../vuumpet/vuumpet_main.html" target="_blank">Redesign model – voompet_web page</a></li>
+                <li><a href="./livingshop.html" target="_blank">living shop_web page</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Industial Design</a>
+              <ul class="sub">
+                <li><a href="./content_cozy.html" target="_self">Customaized Pet Stroller_COZY</a></li>
+                <li><a href="./content_fika.html">Smart Airclean System_FIKA</a></li>
+                <li><a href="./content_entrepreneur.html">Hybrid Airclean System_ENTREPRENEUR</a></li>
+                <li><a href="./content_watch.html">Classic Watch</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Graphic Design</a>
+              <ul class="sub">
+                <li><a href="./content_thenbhd.html">CD Cover Design_The Neighbourhood</a></li>
+                <li><a href="./content_vangogh.html">Brochure Design_Van Gogh Exhibition</a></li>
+                <li><a href="./content_bookcover.html">Book Cover Design</a></li>
+                <li><a href="./content_ifyou.html">IF YOU</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="overlay"></div>
+        </div>
+        <div class="top_item">
+          <div class="pinned_txt">
+            <a href="../index.html">
+              <h1>IM YUNJI<br>ARCHIVE</h1>
+            </a>
+          </div>
+        </div>
+        <div class="top_item">
+          <div class="pinned_txt">
+            <a href="./imyunji_about.html">
+              <h1>ABOUT</h1>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="container">
+      <div id="slider-wrp">
+        <div class="slider-for">
+          <div class="slide-container"><img src="../img/pf_AIR.jpg" alt="피카 메인이미지">
+          </div>
+          <div class="slide-container"><img src="../img/fika_img1.PNG" alt="피카 이미지1"></div>
+          <div class="slide-container"><img src="../img/fika_img2.png" alt="피카 이미지2"></div>
+          <div class="slide-container"><img src="../img/fika_img3.png" alt="피카 이미지3"></div>
+          <div class="slide-container"><img src="../img/fika_img4.png" alt="피카 이미지4"></div>
+        </div>
+        <div class="slider-nav">
+          <div class="slide-btn"><img src="../img/pf_img_5.jpg" alt="피카 메인 썸네일"></div>
+          <div class="slide-btn"><img src="../img/fika_img1_thum.PNG" alt="피카 썸네일1"></div>
+          <div class="slide-btn"><img src="../img/fika_img2_thum.PNG" alt="피카 썸네일2"></div>
+          <div class="slide-btn"><img src="../img/fika_img3_thum.PNG" alt="피카 썸네일3"></div>
+          <div class="slide-btn"><img src="../img/fika_img4_thum.PNG" alt="피카 썸네일4"></div>
+        </div>
+      </div>
+      <div id="contentTxt">
+        <p id="mainTitle">Smart Airclean System_FIKA</p>
+        <p id="subTitle">Industial Design<sup>2017</sup></p>
+        <p id="contentInfo">소통의 부재와 결핍의 일상에서 벗어나 함께 모여 소통을 하고 휴식을 취한다는 의미의 "FIKA"를 통해 충족하고자 했습니다.<br>
+          중앙이 관통된 형태는 소통을 의미하며 공기가 서로 섞여 흐르는 것은 교류를 뜻합니다. 단순 공기청정기를 넘어 같은 공간에서 함께하는 삶에 집중하도록 소통의 매개체인 FIKA를 컨셉으로 하였습니다.
+        </p>
+      </div>
+    </section>
+    <!— Footer —>
+    <footer>
+      <address>
+        본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.<br>
+        © 2022 IM, Yun-Ji. All Rights Reserved.
+      </address>
+    </footer>
+  </div>
+  <!-- jQuery CDN -->
+  <script src="../js/jquery-1.12.4.js"></script>
+  <!-- slick.js -->
+  <script src="../slick/slick.js"></script>
+  <script src="../js/custom.js"></script>
+  <script>
+    
+    $('.slider-for').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: true,
+      autoplay: true,
+      asNavFor: '.slider-nav'
+    });
+
+    $('.slider-nav').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      asNavFor: '.slider-for',
+      dots: true,
+      centerMode: true,
+      focusOnSelect: true,
+      draggable: true,
+      infinite: true,
+      centerPadding: '0px',
+
+      responsive: [{
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+
+    });
+  </script>
+</body>
+
+</html>

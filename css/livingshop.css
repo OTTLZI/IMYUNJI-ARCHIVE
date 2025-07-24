@@ -1,0 +1,375 @@
+@charset "utf-8";
+@import "./common/reset.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  color: rgb(231, 231, 231);
+  font-size: 16px;
+  font-family: 'Noto Sans', sans-serif, 'Noto Sans KR', sans-serif;
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+#wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+header {
+  width: 100%;
+  height: 140px;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.rightItem {
+  width: 100%;
+  max-width: 1300px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.rightItem>ul {
+  width: 230px;
+  height: 80px;
+  float: right;
+  padding: 20px 10px;
+
+}
+
+#signIn,
+#signUp {
+  width: 100px;
+  height: 40px;
+  border-radius: 25px;
+  border: 2px solid whitesmoke;
+  float: left;
+  text-align: center;
+  line-height: 30px;
+  z-index: 999;
+  cursor: pointer;
+}
+
+#signUp {
+  margin-left: 10px;
+}
+
+input[name=tabmenu] {
+  display: none;
+}
+
+.tabs {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+.tab-item {
+  height: 100vh;
+  width: 300%;
+  transition: 0.2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 3칸 나뉘어진 div */
+.tab-item>div {
+  height: 100vh;
+  overflow: scroll;
+  float: left;
+  width: 33.33333%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* about */
+.tab-item div:nth-child(2) {
+  overflow: hidden;
+}
+
+.about {
+  width: 900px;
+  height: 500px;
+}
+
+.tab-item div h1 {
+  font-size: 30px;
+}
+
+.about>h1 {
+  text-align: center;
+}
+
+.about>p {
+  padding-top: 50px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* cart */
+.tab-item div:nth-child(3) {
+  overflow: hidden;
+}
+
+
+
+.btn {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  top: 100px;
+}
+
+.btn label {
+  display: inline-block;
+  height: 40px;
+  width: 100px;
+  background-color: #444;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 20px;
+  line-height: 40px;
+}
+
+input[id=tab1]:checked~.tabs .tab-item {
+  left: -100%;
+}
+
+input[id=tab2]:checked~.tabs .tab-item {
+  left: 0;
+}
+
+input[id=tab3]:checked~.tabs .tab-item {
+  left: -200%;
+}
+
+/* shop items */
+.products {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding-top: 400px;
+}
+
+.items {
+  width: 100%;
+  max-width: 1660px;
+  margin: 200px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px 20px;
+}
+
+/* item */
+.item {
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  position: relative;
+  /* border: 1px solid #ddd; */
+  display: inline-block;
+}
+
+.item:hover img {
+  filter: blur(2px)
+}
+
+.products>ul>li>img {
+  width: 100%;
+  height: 300px;
+}
+
+.caption {
+  width: 100%;
+  height: 70%;
+  background-color: rgba(26, 26, 26, 0.3);
+  position: absolute;
+  bottom: -187px;
+  left: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 1;
+  transition: 0.5s;
+  margin-bottom: 20px;
+}
+
+.item:hover .caption {
+  bottom: 0;
+}
+
+/* title */
+.title {
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.title h2 {
+  font-size: 16px;
+  float: left;
+}
+
+.title span {
+  float: right;
+  font-size: 18px;
+}
+
+.info {
+  position: relative;
+
+}
+
+/* size */
+.size {
+  margin: 10px 0;
+}
+
+.size label,
+.color label {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.size span {
+  font-size: 12px;
+  margin-right: 5px;
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  text-align: center;
+  line-height: 15px;
+  border-radius: 3px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.size span.active,
+.size span:hover {
+  background-color: #333;
+}
+
+.size span,
+.color span {
+  transition: 0.3s;
+}
+
+.color span {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 5px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.color span.active,
+.color span:hover {
+  border: 2px solid #eee;
+}
+
+.color span:nth-child(2) {
+  background-color: rgb(228, 225, 220);
+}
+
+.color span:nth-child(3) {
+  background-color: rgb(138, 134, 134);
+}
+
+.color span:nth-child(4) {
+  background-color: rgb(211, 191, 158);
+}
+
+.color span:nth-child(5) {
+  background-color: rgb(144, 144, 144);
+}
+
+.color span:nth-child(6) {
+  background-color: rgb(42, 42, 42);
+}
+
+.add-cart {
+  width: 100%;
+  padding: 7px;
+  background-color: #333;
+  cursor: pointer;
+  margin-top: 20px;
+  color: azure;
+}
+
+.add-cart:hover {
+  background-color: rgb(255, 255, 255);
+  color: #444;
+}
+
+/* like */
+.like {
+  cursor: pointer;
+}
+
+.like::before {
+  content: '\f08a';
+  font-family: "fontawesome";
+  font-weight: 400;
+  color: #eee;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 10px;
+}
+
+.like.active::before {
+  content: '\f004';
+  font-family: "fontawesome";
+  font-weight: 900;
+  color: crimson;
+}
+
+
+
+/* 미디어쿼리1*/
+/*테블릿 가로, 테블릿 세로 (해상도 768px ~ 1239px)*/
+@media all and (min-width:768px) and (max-width:1239px) {
+  .items {
+    padding-top: 900px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: center; 
+  }
+
+  .item {
+    width: 90%;
+  }
+}
+
+/* 미디어쿼리2// 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+@media all and (min-width:480px) and (max-width:767px) {
+  .items {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: center; 
+    padding-top: 3000px;
+  }
+
+  .item {
+    width: 80%;
+  }
+
+}

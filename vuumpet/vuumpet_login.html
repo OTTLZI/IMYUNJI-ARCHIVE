@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vuumpet_login</title>
+    <link rel="stylesheet" href="../css/vuumpet_login.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <!--header-->
+        <header>
+            <!--nav(메뉴)-->
+            <div class="nav">
+                <div class="gnb_left">
+
+                    <ul class="nav_left">
+                        <li class="nav_list"><a href="vuumpet_login.html" target="">로그인</a></li>
+                        <li class="nav_list"><a href="vuumpet_join.html" target="">회원가입</a></li>
+                        <li class="nav_list"><a href="#" target="">주문조회</a></li>
+                        <li class="nav_list"><a href="#" target="">마이페이지</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="gnb_right">
+                    <div class="nav_right">
+                        <div class="search">
+                            <a href="#" target="">
+                                <img class="search_icon" src="../img/search_icon.png" alt="검색바">
+                            </a>
+                        </div>
+
+                        <div class="basket">
+                            <a href="#" target="">
+                                <img class="basket_img" src="../img/basket.png" alt="장바구니">
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--로고-->
+                <h1 id="logo">
+                    <a href="vuumpet_main.html">
+                        <img class="logo_img" src="../img/logo.png" alt="로고"></a>
+
+                </h1>
+
+                <div class="cnb">
+                    <!--전체보기버튼-->
+                    <div class="view_all">
+                        <a href="#" target="">
+                            <img class="view_all_icon" src="../img/menu.png" alt="메뉴 전체보기">
+                        </a>
+                    </div>
+                    <div class="category">
+                        <!--카테고리-->
+                        <ul class="ctgr">
+                            <li class="ctgr_txt"><a href="vuumpet_main.html" target="">home</a></li>
+                            <li class="ctgr_txt"><a href="#" target="">실시간 인기상품</a></li>
+                            <li class="ctgr_txt"><a href="#" target="">특가상품</a></li>
+                            <li class="ctgr_txt"><a href="#" target="">이벤트</a></li>
+                            <li class="ctgr_txt"><a href="#" target="">스탬프샵</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="contents1">
+            <a href="#" target="">
+                <button class="back_button">뒤로가기</button>
+            </a>
+            <hr class="line_1">
+            <h4>로그인</h4>
+            <a href="#" target="">
+                <button class="kakao_login">카카오로 1초 로그인/회원가입</button>
+            </a>
+            <p class="and">또는</p>
+            <div class="btn_choice_wrap">
+                <a href="#" target="">
+                    <button class="login">기존 회원 로그인</button>
+                </a>
+                <a href="#" target="">
+                    <button class="tracking">비회원 배송조회</button>
+                </a>
+            </div>
+            <div class="inputbox">
+                <input id="member_id" name="member_id" fw-filter="isFill" fw-label="아이디" fw-msg="" class="inputTypeText"
+                    placeholder="아이디" value="" type="text">
+                <input id="member_passwd" name="member_passwd" fw-filter="isFill&amp;isMin[4]&amp;isMax[16]"
+                    fw-label="패스워드" fw-msg="" autocomplete="off" value="" type="password" placeholder="비밀번호">
+            </div>
+            <a href="#"><button class="login_submit">기존 회원 로그인</button></a>
+            <div class="Forgot">
+                <a class="forgot_id" href="#">아이디 찾기</a>
+                <a class="forgot_pw" href="#">비밀번호 찾기</a>
+            </div>
+        </section>
+
+        <!--풋터 시작-->
+        <div class="footer">
+            <div class="footer_guide">
+                <div class="footer_left">
+                    <a href="vuumpet_main.html">
+                        <img class="footer_logo" src="../img/logo.png" alt="로고 이미지">
+                    </a>
+                    <div class="copyright">COPYRIGHT©VUUMPET.ALL RIGHTS RESERVED.</div>
+                </div>
+                <div class="footer_right">
+                    <ul>
+                        <li class="footer_r1">
+                            <div class="footer_icon">
+                                <img src="../img/sns_icon_1.png" alt="카카오톡아이콘">
+                                <img src="../img/sns_icon_2.png" alt="인스타그램아이콘">
+                                <img src="../img/sns_icon_3.png" alt="페이스북아이콘">
+                            </div>
+                            <div class="about">
+                                <p>ABOUT USE</p>
+                                <p>TERMS OF USE</p>
+                                <p>PRIVACY</p>
+                            </div>
+                        </li>
+                        <li class="footer_r2">
+                            <div class="business">
+                                <p>사업문의</p>
+                                <p>yj@vuumpet.kr</p>
+                            </div>
+                            <div class="cs_center">
+                                <p>C.S CENTER</lpi>
+                                    <p>T. 02 555 8292</p>
+                                    <p>AM 09:00 ~ PM 18:00</p>
+                                    <p>PM 12:00 ~ 13:00 (Lunch)</p>
+                                    <p>SAT, SUN, HOLIDAY OFF</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

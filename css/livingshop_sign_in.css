@@ -1,0 +1,151 @@
+@charset "utf-8";
+@import "./common/reset.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: rgb(231, 231, 231);
+  font-size: 16px;
+  font-family: 'Noto Sans', sans-serif, 'Noto Sans KR', sans-serif;
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+#wrap {
+  width: 100%;
+  overflow: hidden;
+}
+#wrap>a{
+  font-size: 40px;
+  padding: 20px;
+}
+.info {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.info p {
+  font-size: 30px;
+  font-weight: 500;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.item {
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 40px auto;
+  font-size: 25px;
+}
+
+.item input {
+  width: 400px;
+  height: 30px;
+  font-size: 16px;
+}
+
+.signInBtn {
+  width: 440px;
+  height: 40px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 40px;
+}
+
+#signIn_sns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+}
+
+#signIn_sns>p {
+  font-size: 16px;
+  padding-bottom: 25px;
+}
+
+.sns {
+  background-color: #eee;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+.sns a {
+  border: 3px solid rgb(255, 255, 255);
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+  text-align: center;
+  line-height: 60px;
+  font-size: 30px;
+  color: black;
+  margin: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sns a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+.sns a:hover::before {
+  height: 100%;
+}
+
+.sns a:nth-child(1)::before {
+  background-color: #3b5999;
+}
+
+.sns a:nth-child(2)::before {
+  background-color: #55acee;
+}
+
+.sns a:nth-child(3)::before {
+  background-color: #dd4b39;
+}
+
+.sns a:nth-child(4)::before {
+  background-color: #e4405f;
+}
+
+.sns a .fa-brands {
+  position: relative;
+  transition: 0.5s;
+}
+
+.sns a:hover .fa-brands {
+  transform: rotateY(360deg);
+  color: #fff;
+}
+
+
+/* 미디어쿼리1*/
+/*테블릿 가로, 테블릿 세로 (해상도 768px ~ 1239px)*/
+@media all and (min-width:768px) and (max-width:1239px) {}
+
+/* 미디어쿼리2// 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+@media all and (min-width:480px) and (max-width:767px) {}
