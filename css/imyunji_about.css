@@ -80,13 +80,13 @@ header .header_text {
 .about_txt {
   line-height: 25px;
   font-size: 14px;
-  color: #888;
+  color: #666;
 }
 
 .about_txt>p {
   padding-bottom: 5px;
   font-size: 15px;
-  color: #555;
+  color: #999;
   font-weight: 600;
 }
 
