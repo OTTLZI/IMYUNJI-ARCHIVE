@@ -245,6 +245,9 @@ input[id="trigger"]:checked+label {
   text-align: right;
   color: #999;
 }
+#subTitle>sup {
+  white-space: nowrap;
+}
 
 #contentInfo {
   font-size: 13px;
