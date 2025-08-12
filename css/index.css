@@ -246,7 +246,7 @@ address {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.9);
   box-sizing: border-box;
 }
 
@@ -348,7 +348,7 @@ address {
 /* 
 * 모바일 사이즈 스타일 
 */
-@media all and (max-width: 767px) {
+@media all and (max-width: 768px) {
   header {
     height: 150px;
   }
@@ -365,8 +365,13 @@ address {
     color: rgb(190, 190, 190);
   }
 
-  .modalContent {
-    width: 100%;
+  #contentTxt {
+    grid-template-columns: 1fr 1fr; /* 두 열만 유지 */
+    margin: 50px 0 50px 0px;
+  }
+  #contentTxt > :nth-child(3) {
+    padding-top: 20px;
+    grid-column: 1 / -1; /* 세 번째 요소를 전체 폭 차지하게 내려줌 */
   }
 
   .sub>li>a::before {
@@ -374,8 +379,9 @@ address {
   }
 
   /* 모달 내부  */
-
   .modalContent {
+    width: 95%;
     padding: 20px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
   }
 }
