@@ -224,6 +224,7 @@ input[id="trigger"]:checked+label {
   display: flex;
 }
 
+/* 우측 텍스트 영역 */
 #contentTxt {
   margin-top: 10%;
   width: 30%;
@@ -234,7 +235,7 @@ input[id="trigger"]:checked+label {
   gap: 10px;
 }
 
-#mainTitle {
+#mainTitle { 
   font-size: 20px;
   color: #444;
   font-weight: 600;
@@ -258,15 +259,27 @@ input[id="trigger"]:checked+label {
 }
 
 #slider-wrp {
-  width: 70%;
-  overflow: hidden;
+  width: 100%;
+  max-width: 1000px;   /* PC에서는 최대 1000px */
+  margin: 0 auto;      /* 가운데 정렬 */
 }
 
-.slider-for {
-  max-width: 1000px;
-  max-height: 500px;
-  margin: 0 auto;
-  /* background-color: thistle; */
+/* 메인 슬라이드 영역 */
+.slider-for .slide-container {
+  width: 100%;
+  aspect-ratio: 2 / 1;  /* 가로세로 비율 = 1000:500 (2:1) 유지 */
+  overflow: hidden;
+}
+.slider-for .slide-container img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .slide-container {
@@ -275,48 +288,44 @@ input[id="trigger"]:checked+label {
   font-weight: bold;
   overflow: hidden;
   position: relative;
+  width: 100%;
   height: 500px;
 }
 
-.slide-container>img {
-  max-height: 500px;
-  object-fit: contain;
-  object-position: center;
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
+/* 네비게이션 */
 .slider-nav {
-  width: 900px;
-  height: 200px;
-  /* border: 1px solid rgb(43, 30, 223); */
-  margin: 0 auto;
-  margin-top: 20px;
+  width: 100%;         
+  max-width: 900px;     /* PC에서는 최대 900px */
+  display: flex;        /* 썸네일 가로 배치 */
+  justify-content: center;
+  gap: 10px;           
+  margin: 20px auto 0;  
+  flex-wrap: wrap;     
 }
 
+/* 썸네일 버튼 */
 .slide-btn {
-  max-width: 250px;
-  height: 200px;
+  flex: 1;                     /* 자동으로 같은 비율 */
+  max-width: 200px;         
+  aspect-ratio: 5 / 4;         /* 가로세로 비율 유지 (원하는 비율로 조정 가능) */
   overflow: hidden;
-  text-align: center;
-  /* border: 1px solid rgb(252, 62, 62); */
   cursor: pointer;
 }
 
+/* 이미지 */
 .slide-btn img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.3s linear;
-  padding: 5px;
+  transition: transform 0.3s ease;
+  display: block;
 }
 
+/* hover 효과 */
 .slide-btn:hover img {
-  transform: scale(1.4);
+  transform: scale(1.2);
 }
+
 
 /* footer영역 */
 footer {
@@ -353,7 +362,12 @@ address {
   }
 
   .slide-container {
-    height: 400px;
+    object-fit: cover;
+    /* height: 250px; */
+  }
+  .slide-container>img{
+    max-width: 100%;  /* 뷰포트 가로 폭에 맞게 줄어듦 */
+    height: auto;     /* 세로는 비율에 맞게 자동 */
   }
 
   .slider-nav {
