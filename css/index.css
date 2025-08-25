@@ -347,9 +347,9 @@ address {
   .sidebar {
     top: 80px;
     left: 0;
-    width: 300px;
+    width: 340px;
     height: 100vh;
-    padding: 40px 20px;
+    padding: 40px 30px;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
   }
@@ -407,7 +407,7 @@ address {
   .sidebar {
     top: 80px;
     left: 0;
-    width: 260px;
+    width: 320px;
     height: 100vh;
     padding: 30px 20px;
     transform: translateX(-100%);
@@ -451,10 +451,6 @@ address {
     /* IE 지원용 */
     white-space: normal;
     /* 줄바꿈 허용 */
-    padding-left: 15px;
-    /* 왼쪽 기준선 여백 */
-    padding-right: 15px;
-    /* 오른쪽 여백 확보 */
     box-sizing: border-box;
     /* padding 포함 폭 계산 */
     text-indent: 0;
