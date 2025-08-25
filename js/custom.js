@@ -47,5 +47,35 @@ $(function () {
       $("input:checkbox[id='trigger']").prop("checked", false);
     }
   });
-  
+
+});
+
+
+// 모바일 네비 햄버거 동작
+$(document).ready(function () {
+  // li 클릭 시 서브 메뉴 토글
+  $('.sidebar > ul > li > a').on('click', function (e) {
+    if ($(window).width() <= 768) {
+      e.preventDefault();
+      $(this).next('.sub').slideToggle();
+      $(this).parent().siblings().find('.sub').slideUp();
+    }
+  });
+
+  // 햄버거 체크박스 클릭 시 sidebar & overlay
+  $('#trigger').on('change', function () {
+    if ($(this).is(':checked')) {
+      $('.sidebar').css('left', '0');
+      $('.overlay').fadeIn();
+    } else {
+      $('.sidebar').css('left', '-260px');
+      $('.overlay').fadeOut();
+      $('.sidebar .sub').slideUp();
+    }
+  });
+
+  // 오버레이 클릭 시 메뉴 닫기
+  $('.overlay').on('click', function () {
+    $('#trigger').prop('checked', false).trigger('change');
+  });
 });

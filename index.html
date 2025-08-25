@@ -15,26 +15,68 @@
 
 <body>
   <div id="wrap">
-    <header>
-      <div class="header_item">
-        <a href="index.html">
-          <h3 class="header_text">IM YUNJI<br>ARCHIVE</h1>
+    <input type="checkbox" id="trigger" />
+    <header class="pinned_top">
+      <!-- 햄버거 버튼 (모바일 전용) -->
+      <label class="menu-btn" for="trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- 로고 중앙 -->
+      <div class="top_item logo">
+        <a href="index.html" class="pinned_txt">
+          <h1>IM YUNJI<br>ARCHIVE</h1>
         </a>
       </div>
-      <div class="header_item">
-        <a href="imyunji/imyunji_about.html">
-          <h3 class="header_text">ABOUT</h1>
-        </a>
-      </div>
-      <div class="header_item">
-        <a href="#">
-          <h3 class="header_text">CONTACT<br><a href="mailto:﻿" superman@test.com">dbswl6692@naver.com</a></h1>
+
+      <!-- ABOUT 우측 -->
+      <div class="top_item about">
+        <a href="imyunji/imyunji_about.html" class="pinned_txt">
+          <h1>ABOUT</h1>
         </a>
       </div>
     </header>
+
+    <!-- 사이드 네비 -->
+    <nav class="sidebar" id="side_nav">
+      <ul>
+        <li>
+          <a href="#">Graphic Design</a>
+          <ul class="sub">
+            <li><a href="imyunji/content_samsungcard.html" target="_blank">samsungcard UX design</a></li>
+            <li><a href="vuumpet/vuumpet_main.html" target="_blank">finance visual</a></li>
+            <li><a href="vuumpet/vuumpet_main.html" target="_blank">Redesign model – voompet_web page</a></li>
+            <li><a href="imyunji/livingshop.html" target="_blank">living shop_web page</a></li>
+            <li><a href="imyunji/content_ifyou.html">IF YOU</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Industial Design</a>
+          <ul class="sub">
+            <li><a href="imyunji/content_cozy.html">Customaized Pet Stroller_COZY</a></li>
+            <li><a href="imyunji/content_fika.html">Smart Airclean System_FIKA</a></li>
+            <li><a href="imyunji/content_entrepreneur.html">Hybrid Airclean System_ENTREPRENEUR</a></li>
+            <li><a href="imyunji/content_watch.html">Classic Watch</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Editorial Design</a>
+          <ul class="sub">
+            <li><a href="imyunji/content_thenbhd.html">CD Cover Design_The Neighbourhood</a></li>
+            <li><a href="imyunji/content_vangogh.html">Brochure Design_Van Gogh Exhibition</a></li>
+            <li><a href="imyunji/content_bookcover.html">Book Cover Design</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="overlay"></div>
+
+
     <!-- 메인컨텐츠섹션1 -->
     <section class="container">
-      <div id="side_nav">
+      <!-- <div id="side_nav">
         <div class="gnb">
           <ul class="sidebar">
             <li>
@@ -66,7 +108,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
 
       <ul id="right_content">
         <li class="modalBtn">

@@ -11,6 +11,7 @@
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   <!-- css -->
   <link rel="stylesheet" href="../css/content_watch.css">
+  <link rel="stylesheet" href="../css/header.css">
   <style>
   </style>
   <!-- slick.css -->
@@ -24,12 +25,16 @@
       <div class="pinned_top">
         <!-- side_nav -->
         <div class="top_item">
+          <!-- trigger (체크박스는 숨김) -->
           <input type="checkbox" id="trigger">
-          <label for="trigger">
+          <!-- 햄버거 버튼 -->
+          <label for="trigger" class="menu-btn">
             <span></span>
             <span></span>
             <span></span>
           </label>
+
+          <!-- 사이드바 -->
           <ul class="sidebar">
             <li>
               <a href="#">Web publishing</a>
@@ -57,8 +62,12 @@
               </ul>
             </li>
           </ul>
-          <div class="overlay"></div>
+
+          <!-- dim overlay (블랙 배경) -->
+          <label for="trigger" class="overlay"></label>
         </div>
+
+        <!-- 헤더 홈 -->
         <div class="top_item">
           <div class="pinned_txt">
             <a href="../index.html">
@@ -66,6 +75,8 @@
             </a>
           </div>
         </div>
+
+        <!-- about -->
         <div class="top_item">
           <div class="pinned_txt">
             <a href="./imyunji_about.html">
@@ -75,14 +86,19 @@
         </div>
       </div>
     </header>
+
     <section class="container">
       <div id="slider-wrp">
         <div class="slider-for">
-          <div class="slide-container"><img src="https://OTTLZI.github.io/IMYUNJI-ARCHIVE/img/gogh1.png" alt="고흐1"></div>
+          <div class="slide-container"><img src="https://OTTLZI.github.io/IMYUNJI-ARCHIVE/img/gogh1.png" alt="고흐1">
+          </div>
           <div class="slide-container"><img src="https://OTTLZI.github.io/IMYUNJI-ARCHIVE/img/gogh2.png"></div>
-          <div class="slide-container"><img src="https://OTTLZI.github.io/IMYUNJI-ARCHIVE/img/gogh3.png" alt="고흐3"></div>
-          <div class="slide-container"><img src="https://OTTLZI.github.io/IMYUNJI-ARCHIVE/img/gogh4.png" alt="고흐4"></div>
-          <div class="slide-container"><img src="https://OTTLZI.github.io/IMYUNJI-ARCHIVE/img/gogh5.png" alt="고흐5"></div>
+          <div class="slide-container"><img src="https://OTTLZI.github.io/IMYUNJI-ARCHIVE/img/gogh3.png" alt="고흐3">
+          </div>
+          <div class="slide-container"><img src="https://OTTLZI.github.io/IMYUNJI-ARCHIVE/img/gogh4.png" alt="고흐4">
+          </div>
+          <div class="slide-container"><img src="https://OTTLZI.github.io/IMYUNJI-ARCHIVE/img/gogh5.png" alt="고흐5">
+          </div>
         </div>
         <div class="slider-nav">
           <div class="slide-btn"><img src="../img/gogh1-thum.png" alt="고흐1썸네일"></div>

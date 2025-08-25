@@ -11,6 +11,7 @@
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   <!-- css -->
   <link rel="stylesheet" href="../css/content_samsungcard.css">
+  <link rel="stylesheet" href="../css/header.css">
   <style>
   </style>
   <!-- slick.css -->
@@ -24,12 +25,16 @@
       <div class="pinned_top">
         <!-- side_nav -->
         <div class="top_item">
+          <!-- trigger (체크박스는 숨김) -->
           <input type="checkbox" id="trigger">
-          <label for="trigger">
+          <!-- 햄버거 버튼 -->
+          <label for="trigger" class="menu-btn">
             <span></span>
             <span></span>
             <span></span>
           </label>
+
+          <!-- 사이드바 -->
           <ul class="sidebar">
             <li>
               <a href="#">Web publishing</a>
@@ -57,8 +62,12 @@
               </ul>
             </li>
           </ul>
-          <div class="overlay"></div>
+
+          <!-- dim overlay (블랙 배경) -->
+          <label for="trigger" class="overlay"></label>
         </div>
+
+        <!-- 헤더 홈 -->
         <div class="top_item">
           <div class="pinned_txt">
             <a href="../index.html">
@@ -66,6 +75,8 @@
             </a>
           </div>
         </div>
+
+        <!-- about -->
         <div class="top_item">
           <div class="pinned_txt">
             <a href="./imyunji_about.html">
@@ -75,94 +86,262 @@
         </div>
       </div>
     </header>
+
+    <div class="container">
+      <!-- 프로젝트 설명 -->
+      <article class="project-article">
+        <div class="article-header">
+          <div class="left">Graphic Design</div>
+          <div class="right">23.08 - 25.05</div>
+        </div>
+
+        <div class="article-content">
+          <div class="title">samsungcard UX Design</div>
+          <div class="description">
+            삼성카드 UX디자인실에서 앱 전반의 그래픽과 UI를 담당하며 브랜드 경험과 사용성 향상을 주도했습니다.<br>
+            스플래시 아트, 삼성카드앱과 신규 모니모 앱의 배너·모션그래픽, 챗봇 비주얼, 데이터랩 썸네일,
+            UI 아이콘 및 금융 탭 개선, 그리고 다양한 서비스 내 프로모션 그래픽을 제작하여
+            브랜드 이미지와 사용자 경험을 동시에 향상시켰습니다.
+          </div>
+        </div>
+      </article>
+
+      <!-- 컨텐츠 영역 -->
+      <div class="project-section">
+        <!-- 좌측 INDEX -->
+        <aside class="index">
+          <ul>
+            <li><a href="#projectA">01. Project Title A</a></li>
+            <li><a href="#projectB">02. Project Title B</a></li>
+            <li><a href="#projectC">03. Project Title C</a></li>
+            <li><a href="#projectD">04. Project Title D</a></li>
+            <li><a href="#projectE">04. Project Title E</a></li>
+          </ul>
+        </aside>
+
+        <!-- 우측 컨텐츠 -->
+        <div class="project-contents">
+          <!-- Project A -->
+          <div class="project-block" id="projectA">
+            <div class="project-info">
+              <h2 class="project-title">Big Banner</h2>
+              <h3 class="project-subtitle">samsungcard</h3>
+              <p class="project-desc">
+                  앱 접속 시 가장 먼저 노출되는 화면으로, 계절 및 이벤트(신규 카드 출시, 링크 혜택)에 맞춘 콘셉트 디자인을 담당했습니다. 첫 화면에서 사용자 경험과 브랜드 이미지를 강화하는 역할을 수행했습니다.</p>
+            </div>
+            <div class="slider">
+              <div class="slides">
+                <div class="slide"><img src="../img/samsungcard_bigbanner.png" alt="빅배너"></div>
+                <div class="slide"><img src="../img/samsungcard_bigbanner.png" alt="빅배너"></div>
+                <div class="slide"><img src="https://via.placeholder.com/800x300/99cc66/fff?text=A3" alt=""></div>
+              </div>
+              <button class="prev">&#10094;</button>
+              <button class="next">&#10095;</button>
+            </div>
+          </div>
+
+          <!-- Project B -->
+          <div class="project-block" id="projectB">
+            <div class="project-info">
+              <h2 class="project-title">Project Title</h2>
+              <h3 class="project-subtitle">Project Subtitle</h3>
+              <p class="project-desc">앱 최상단에 노출되는 핵심 배너 디자인 프로젝트. 할인, 쿠폰, 제휴 이벤트 등 다양한 주제를 직관적이고 시각적으로 매력적으로 전달하도록 디자인했습니다. 사용자 주목도와 참여율 향상에 기여했습니다.</p>
+            </div>
+            <div class="slider">
+              <div class="slides">
+                <div class="slide"><img src="../img/samsungcard_bigbanner.png" alt="빅배너"></div>
+                <div class="slide"><img src="../img/samsungcard_bigbanner.png" alt="빅배너"></div>
+                <div class="slide"><img src="https://via.placeholder.com/800x300/99cc66/fff?text=A3" alt=""></div>
+              </div>
+              <button class="prev">&#10094;</button>
+              <button class="next">&#10095;</button>
+            </div>
+          </div>
+          <!-- Project C -->
+          <div class="project-block" id="projectC">
+            <div class="project-info">
+              <h2 class="project-title">Project Title</h2>
+              <h3 class="project-subtitle">Project Subtitle</h3>
+              <p class="project-desc">웨딩, 여행, 보험 등 각 이벤트 상품과 제휴사를 강조하는 배너 디자인을 진행했습니다. 상품 특징과 혜택을 직관적으로 전달하며 사용자 관심을 유도했습니다.</p>
+            </div>
+            <div class="slider">
+              <div class="slides">
+                <div class="slide"><img src="../img/samsungcard_bigbanner.png" alt="빅배너"></div>
+                <div class="slide"><img src="../img/samsungcard_bigbanner.png" alt="빅배너"></div>
+                <div class="slide"><img src="https://via.placeholder.com/800x300/99cc66/fff?text=A3" alt=""></div>
+              </div>
+              <button class="prev">&#10094;</button>
+              <button class="next">&#10095;</button>
+            </div>
+          </div>
+          <!-- Project D -->
+          <div class="project-block" id="projectD">
+            <div class="project-info">
+              <h2 class="project-title">Project Title</h2>
+              <h3 class="project-subtitle">Project Subtitle</h3>
+              <p class="project-desc">데이터랩의 데이터 상품과 ‘데이터 톡’ 콘텐츠에 맞춘 썸네일 디자인을 담당했습니다. 정보 전달력과 주제 적합성을 높이는 시각적 구성을 구현하여, 데이터랩 콘텐츠의 이해도를 높였습니다.</p>
+            </div>
+            <div class="slider">
+              <div class="slides">
+                <div class="slide"><img src="../img/samsungcard_bigbanner.png" alt="빅배너"></div>
+                <div class="slide"><img src="../img/samsungcard_bigbanner.png" alt="빅배너"></div>
+                <div class="slide"><img src="https://via.placeholder.com/800x300/99cc66/fff?text=A3" alt=""></div>
+              </div>
+              <button class="prev">&#10094;</button>
+              <button class="next">&#10095;</button>
+            </div>
+          </div>
+          <!-- Project E -->
+          <div class="project-block" id="projectE">
+              <div class="project-info">
+                <h2 class="project-title">Project Title</h2>
+                <h3 class="project-subtitle">Project Subtitle</h3>
+                <p class="project-desc">데이터랩의 데이터 상품과 ‘데이터 톡’ 콘텐츠에 맞춘 썸네일 디자인을 담당했습니다. 정보 전달력과 주제 적합성을 높이는 시각적 구성을 구현하여, 데이터랩 콘텐츠의 이해도를 높였습니다.</p>
+              </div>
+              <div class="slider">
+                <div class="slides">
+                  <div class="slide"><img src="../img/samsungcard_bigbanner.png" alt="빅배너"></div>
+                  <div class="slide"><img src="../img/samsungcard_bigbanner.png" alt="빅배너"></div>
+                  <div class="slide"><img src="https://via.placeholder.com/800x300/99cc66/fff?text=A3" alt=""></div>
+                </div>
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+              </div>
+            </div>
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+    <!-- 모달 -->
+    <div class="img-modal" id="imgModal">
+      <div class="img-modal__content">
+        <button class="img-modal__close">&times;</button>
+        <div class="img-modal__bg" id="modalBg">
+          <img id="modalImg" src="" alt="modal image">
+        </div>
+      </div>
+    </div>
     <!-- footer -->
-    <section class="container">
-      <div id="slider-wrp">
-        <div class="slider-for">
-          <div class="slide-container"><img src="../img/ifyou1.PNG" alt="앱스플래시아트"></div>
-          <div class="slide-container"><img src="../img/samsungcard_bigbanner.png" alt="빅배너"></div>
-          <div class="slide-container"><img src="../img/ifyou3.jpg" alt="캔디"></div>
-          <div class="slide-container"><img src="../img/ifyou4.jpg" alt="이벤트"></div>
-          <div class="slide-container"><img src="../img/ifyou4.jpg" alt="금융"></div>
-        </div>
-        <div class="slider-nav">
-          <div class="slide-btn"><img src="../img/ifyou1.PNG" alt="이프유1 썸네일"></div>
-          <div class="slide-btn"><img src="../img/ifyou2.PNG" alt="이프유2 썸네일"></div>
-          <div class="slide-btn"><img src="../img/ifyou3.jpg" alt="이프유3 썸네일"></div>
-          <div class="slide-btn"><img src="../img/ifyou4.jpg" alt="이프유4 썸네일"></div>
-        </div>
-      </div>
-      <div id="contentTxt">
-        <p id="mainTitle">samsungcard UX design</p>
-        <p id="subTitle">Graphic Design<sup>2023-2025</sup></p>
-        <p id="contentInfo">
-          삼성카드 UX디자인실에서 앱 전반의 그래픽과 UI를 담당하며 브랜드 경험과 사용성 향상을 주도했습니다. 스플래시 아트, 삼성카드앱과 신규 모니모 앱의 배너·모션그래픽, 챗봇 비주얼, 데이터랩 썸네일, UI 아이콘 및 금융 탭 개선, 그리고 다양한 서비스 내 프로모션(캔디모으기·여행·보험·웨딩·프리미엄 라운지) 그래픽을 제작하여 브랜드 이미지와 사용자 경험을 동시에 향상시켰습니다.
-        </p>
-      </div>
-    </section>
-    <!— Footer —>
-      <footer>
-        <address>
-          본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.<br>
-          © 2022 IM, Yun-Ji. All Rights Reserved.
-        </address>
-      </footer>
-  </div>
-  <!-- jQuery CDN -->
-  <script src="../js/jquery-1.12.4.js"></script>
-  <!-- slick.js -->
-  <script src="../slick/slick.js"></script>
-  <script src="../js/custom.js"></script>
-  <script>
-    $('.slider-for').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      fade: true,
-      autoplay: true,
-      asNavFor: '.slider-nav'
-    });
+    <footer>
+      <address>
+        본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.<br>
+        © 2022 IM, Yun-Ji. All Rights Reserved.
+      </address>
+    </footer>
+    <!-- 스크립트 -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        /* ---------------- 슬라이드 ---------------- */
+        const sliders = document.querySelectorAll(".slider");
 
-    $('.slider-nav').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      asNavFor: '.slider-for',
-      dots: true,
-      centerMode: true,
-      focusOnSelect: true,
-      draggable: true,
-      infinite: true,
-      centerPadding: '0px',
+        sliders.forEach((slider) => {
+          const slides = slider.querySelector(".slides");
+          const slide = slider.querySelectorAll(".slide");
+          const prevBtn = slider.querySelector(".prev");
+          const nextBtn = slider.querySelector(".next");
+          let index = 0;
 
-      responsive: [{
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: true
+          function updateSlide() {
+            slides.style.transform = `translateX(-${index * 100}%)`;
           }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
+
+          if (nextBtn) {
+            nextBtn.addEventListener("click", () => {
+              index = (index + 1) % slide.length;
+              updateSlide();
+            });
           }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
+
+          if (prevBtn) {
+            prevBtn.addEventListener("click", () => {
+              index = (index - 1 + slide.length) % slide.length;
+              updateSlide();
+            });
           }
+        });
+
+        /* ---------------- 모달 ---------------- */
+        const modal = document.getElementById("imgModal");
+        const modalImg = document.getElementById("modalImg");
+        const modalBg = document.getElementById("modalBg"); // ✅ 배경 박스
+        const modalClose = document.querySelector(".img-modal__close");
+
+        // 이미지 클릭 → 모달 열기
+        document.querySelectorAll(".slide img").forEach((img) => {
+          img.style.cursor = "zoom-in";
+          img.addEventListener("click", () => {
+            // 이미지 소스
+            modalImg.src = img.src;
+
+            // 배경색: img의 data-bg 또는 부모 .slide의 data-bg / data-bgcolor 지원
+            const colorFromImg = img.dataset.bg || img.getAttribute("data-bg");
+            const slideEl = img.closest(".slide");
+            const colorFromSlide =
+              (slideEl && (slideEl.dataset.bg || slideEl.dataset.bgcolor)) || null;
+
+            const bgColor = colorFromImg || colorFromSlide || "#ffffff";
+
+            // ✅ 배경색은 wrapper에 적용해야 PNG 투명영역 뒤에 깔림
+            modalBg.style.backgroundColor = bgColor;
+
+            // 열기
+            modal.style.display = "flex";
+            modal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden"; // 바디 스크롤 잠금
+          });
+        });
+
+        // 닫기 버튼
+        modalClose.addEventListener("click", closeModal);
+
+        // 바깥 영역 클릭 시 닫기
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) closeModal();
+        });
+
+        // ESC로 닫기
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && modal.style.display === "flex") {
+            closeModal();
+          }
+        });
+
+        function closeModal() {
+          modal.style.display = "none";
+          modal.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = ""; // 스크롤 잠금 해제
+          // 성능/UX: 큰 이미지를 남기고 싶지 않다면 아래 주석 해제
+          // modalImg.src = "";
         }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
-      ]
 
-    });
-  </script>
+        /* ---------------- 사이드바 overlay 닫기 ---------------- */
+        const trigger = document.getElementById("trigger");
+        const overlay = document.querySelector(".overlay");
+
+        if (overlay) {
+          overlay.addEventListener("click", () => {
+            trigger.checked = false;
+            document.body.classList.remove("menu-open");
+          });
+        }
+
+        /* ---------------- 메뉴 열렸을 때 body scroll 막기 ---------------- */
+        if (trigger) {
+          trigger.addEventListener("change", () => {
+            if (trigger.checked) {
+              document.body.classList.add("menu-open");
+            } else {
+              document.body.classList.remove("menu-open");
+            }
+          });
+        }
+      });
+    </script>
+
 </body>
 
 </html>
