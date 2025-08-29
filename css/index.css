@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import "./common/reset.css";
 
+/* ================== 공통 ================== */
 html {
   scrollbar-gutter: stable;
 }
@@ -44,7 +45,7 @@ a {
   z-index: 1200;
 }
 
-/* ===== 헤더 ===== */
+/* ===== 헤더 (데스크탑 기본) ===== */
 header.pinned_top {
   position: fixed;
   top: 0;
@@ -57,7 +58,7 @@ header.pinned_top {
   padding: 0 60px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.3);
   background: #fff;
-  z-index: 999;
+  z-index: 2000;
 }
 
 .top_item {
@@ -94,7 +95,7 @@ header.pinned_top {
   width: 30px;
   height: 30px;
   position: relative;
-  z-index: 1001;
+  z-index: 2100;
 }
 
 .menu-btn span {
@@ -120,16 +121,19 @@ header.pinned_top {
 /* ===== 사이드바 ===== */
 .sidebar {
   position: fixed;
-  top: 200px;
+  top: 150px;
   left: 60px;
-  width: 350px;
-  z-index: 1000;
+  width: 18%;
+  height: calc(100% - 150px);
+  padding: 50px 0;
   background: #fff;
-  line-height: 40px;
+  overflow-y: auto;
+  z-index: 2050;
 }
 
 .sidebar>ul>li {
   position: relative;
+  padding: 5px 0px;
 }
 
 .sidebar>ul>li>a {
@@ -140,7 +144,7 @@ header.pinned_top {
 
 .sidebar .sub {
   display: none;
-  margin-top: 5px;
+  margin-top: 10px;
   list-style: none;
 }
 
@@ -159,11 +163,15 @@ header.pinned_top {
   color: rgb(42, 130, 231);
 }
 
-/* 오버레이 */
+.nav-close {
+  display: none;
+}
+
+/* ===== 오버레이 ===== */
 .overlay {
   display: none;
   position: fixed;
-  z-index: 1500;
+  z-index: 2000;
   top: 0;
   left: 0;
   width: 100%;
@@ -174,15 +182,16 @@ header.pinned_top {
 /* ===== 메인 컨테이너 ===== */
 .container {
   display: flex;
-  padding: 240px 60px 40px 60px;
+  padding: 210px 60px 40px 60px;
   gap: 20px;
 }
 
 #right_content {
+  width: 80%;
+  margin-left: 20%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  margin-left: auto;
 }
 
 #right_content>li {
@@ -195,7 +204,7 @@ header.pinned_top {
   transition: transform .35s ease, box-shadow .35s ease;
 }
 
-#right_content>li:hover {
+#right_content li:hover {
   transform: translateY(-15px);
   box-shadow: 0 5px rgba(209, 209, 209, 0.26);
 }
@@ -206,7 +215,6 @@ header.pinned_top {
   object-fit: cover;
 }
 
-/* 썸네일 미리보기 */
 .thum_txt {
   position: absolute;
   inset: 0;
@@ -240,34 +248,25 @@ header.pinned_top {
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 40px 16px;
   background: rgba(0, 0, 0, 0.6);
   z-index: 5000;
 }
 
 .modalContent {
+  width: min(1200px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
   background: #fff;
+  padding: 24px 20px;
   border-radius: 12px;
   box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
-  max-width: 1200px;
-  width: 90%;
-  max-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  /* 여기 유지 */
   position: relative;
+  margin: auto;
 }
 
-.modalBody {
-  overflow-y: auto;
-  /* 스크롤 가능하게 */
-  padding: 20px;
-}
-
-.modalBody img {
-  max-width: 100%;
-  height: auto;
+.modalContent img {
+  width: 100%;
   display: block;
   margin: 0 auto;
 }
@@ -285,48 +284,28 @@ header.pinned_top {
   z-index: 5100;
 }
 
-/* ==== contentTxt 스타일 ==== */
+/* ===== contentTxt ===== */
 #contentTxt {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  /* 이미지와 타이틀/설명글 간 간격 */
-  margin: 40px 0px;
-  max-width: 100%;
-  word-break: break-word;
+  gap: 20px;
+  margin-top: 30px;
 }
 
-/* PC/태블릿: 메인/서브 타이틀 평행 배치 */
-#titleRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  /* 폰트 크기 차이 있어도 밑줄 맞춤 */
-  gap: 16px;
-}
-
-#mainTitle {
-  font-size: 20px;
+#contentTxt #mainTitle {
+  font-size: 28px;
   font-weight: 700;
+  text-align: left;
 }
 
-#mainTitle a {
-  color: #222;
-  text-decoration: none;
-}
-
-#subTitle {
-  font-size: 12px;
-  color: #888;
-}
-
-#subTitle sup {
-  font-size: 10px;
-}
-
-/* 콘텐츠 설명글 */
-#contentInfo {
+#contentTxt #subTitle {
   font-size: 14px;
+  color: #888;
+  text-align: right;
+}
+
+#contentTxt #contentInfo {
+  font-size: 16px;
   line-height: 1.6;
   color: #333;
 }
@@ -346,7 +325,6 @@ footer address {
   font-style: normal;
 }
 
-/* 모달 열릴 때 바디 스크롤 막기 */
 body.no-scroll {
   position: fixed;
   width: 100%;
@@ -354,7 +332,7 @@ body.no-scroll {
 }
 
 /* ===== 반응형 ===== */
-@media (max-width: 1024px) {
+@media (max-width:1024px) {
   header.pinned_top {
     height: 80px;
     padding: 0 30px;
@@ -372,8 +350,8 @@ body.no-scroll {
 
   #right_content {
     grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;  /* 좌우 중앙 정렬 */
     gap: 20px;
-    margin-left: 0;
   }
 
   #right_content>li {
@@ -383,23 +361,16 @@ body.no-scroll {
   }
 
   .sidebar {
-    top: 80px;
-    left: 0;
+    top: 0;
+    left: -340px;
     width: 340px;
     height: 100vh;
     padding: 40px 30px;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
+    transition: 0.3s ease;
   }
 
-  #trigger:checked~.sidebar {
-    transform: translateX(0);
-  }
-
-  .overlay {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
+  .sidebar.active {
+    left: 0;
   }
 
   #trigger:checked~.overlay {
@@ -408,77 +379,36 @@ body.no-scroll {
     visibility: visible;
   }
 
-  #mainTitle {
-    font-size: 18px;
-  }
-
-
-  #contentInfo {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-}
-
-@media (max-width: 767px) {
-  .modalBody {
-    padding: 0px;
-  }
-
-  header.pinned_top {
-    height: 80px;
-    padding: 0 15px;
-  }
-
-  .container {
-    padding: 100px 15px 30px 15px;
-    gap: 15px;
-  }
-
-  #right_content {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    margin-left: 0;
-  }
-
-  #right_content>li {
-    height: 200px;
-    max-width: 100%;
-  }
-
-  .sidebar {
-    top: 80px;
-    left: 0;
-    width: 320px;
-    height: 100vh;
-    padding: 30px 20px;
-    transform: translateX(-100%);
-  }
-
-  #trigger:checked~.sidebar {
-    transform: translateX(0);
-  }
-
   .modal {
     padding: 16px 10px;
   }
 
   .modalContent {
     padding: 14px 12px;
-    border-radius: 12px;
+    border-radius: 10px;
   }
 
-  #titleRow {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+  #contentTxt #mainTitle {
+    font-size: 24px;
   }
 
-  #mainTitle {
-    font-size: 16px;
-  }
-
-  #contentInfo {
+  #contentTxt #subTitle {
     font-size: 12px;
-    line-height: 1.6;
+  }
+
+  #contentTxt #contentInfo {
+    font-size: 14px;
+  }
+
+  .nav-close {
+    display: block;
+  }
+}
+
+@media (max-width:768px) {
+  #right_content {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    /* 좌우 중앙 정렬 */
   }
 }
