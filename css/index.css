@@ -33,7 +33,7 @@ a {
 /* ===== 스크롤 TOP 버튼 ===== */
 .btn-top {
   position: fixed;
-  right: 50px;
+  right: 60px;
   bottom: 20px;
   font-size: 30px;
   color: #fff;
@@ -164,10 +164,30 @@ header.pinned_top {
 }
 
 .nav-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(128, 128, 128);
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+  z-index: 1001;
   display: none;
 }
 
-/* ===== 오버레이 ===== */
+.nav-close:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+/* 사이드바용 overlay */
 .overlay {
   display: none;
   position: fixed;
@@ -176,7 +196,7 @@ header.pinned_top {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 /* ===== 메인 컨테이너 ===== */
@@ -241,6 +261,17 @@ header.pinned_top {
   font-size: 12px;
 }
 
+/* ===== 모달 오버레이 ===== */
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 3000; /* modalContent 아래 */
+}
+
 /* ===== 모달 ===== */
 .modal {
   position: fixed;
@@ -249,20 +280,23 @@ header.pinned_top {
   align-items: center;
   justify-content: center;
   padding: 40px 16px;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 5000;
+  z-index: 3100; /* overlay 위 */
+  pointer-events: none; /* overlay 클릭만 가능 */
 }
 
+/* ===== 모달 콘텐츠 ===== */
 .modalContent {
-  width: min(1200px, 100%);
+  width: min(1000px, 100%);
   max-height: 90vh;
   overflow-y: auto;
   background: #fff;
   padding: 24px 20px;
   border-radius: 12px;
-  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 60px rgba(0,0,0,0.5);
   position: relative;
   margin: auto;
+  z-index: 3200; /* overlay 위 */
+  pointer-events: auto; /* 내용 클릭 가능 */
 }
 
 .modalContent img {
@@ -271,17 +305,29 @@ header.pinned_top {
   margin: 0 auto;
 }
 
+/* 모달 닫기 버튼 */
 .btn-close {
-  position: absolute;
-  top: 16px;
-  right: 24px;
-  font-size: 48px;
-  line-height: 1;
-  background: none;
-  border: 0;
-  color: #222;
+  position: fixed; /* overlay 기준 */
+  top: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  color: #000;
+  font-size: 1.8rem;
   cursor: pointer;
-  z-index: 5100;
+  z-index: 3300; /* modalContent 위 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-close:hover {
+  background: #fff;
+  transform: scale(1.1);
 }
 
 /* ===== contentTxt ===== */
@@ -349,8 +395,9 @@ body.no-scroll {
   }
 
   #right_content {
+    width: 100%;
     grid-template-columns: repeat(2, 1fr);
-    margin: 0 auto;  /* 좌우 중앙 정렬 */
+    margin: 0 auto;
     gap: 20px;
   }
 
@@ -373,6 +420,10 @@ body.no-scroll {
     left: 0;
   }
 
+  .sidebar ul {
+    margin-top: 40px;
+  }
+
   #trigger:checked~.overlay {
     display: block;
     opacity: 1;
@@ -380,7 +431,7 @@ body.no-scroll {
   }
 
   .modal {
-    padding: 16px 10px;
+    padding: 70px 15px;
   }
 
   .modalContent {
@@ -403,12 +454,29 @@ body.no-scroll {
   .nav-close {
     display: block;
   }
-}
 
-@media (max-width:768px) {
-  #right_content {
-    grid-template-columns: 1fr;
-    margin: 0 auto;
-    /* 좌우 중앙 정렬 */
+  .nav-close:hover {
+    transform: scale(1.15);
+  }
+
+  .btn-close {
+    top: 15px;
+    right: 15px;
+    font-size: 2.2rem;
+  }
+
+  .btn-close:hover {
+    background: rgba(0,0,0,0.9);
+  }
+
+  .btn-top {
+    right: 15px;
+  }
+
+  @media (max-width:768px) {
+    #right_content {
+      grid-template-columns: 1fr;
+      margin: 0 auto;
+    }
   }
 }

@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import "./common/reset.css";
 
+/* ===== 기본 ===== */
 * {
   margin: 0;
   padding: 0;
@@ -8,73 +9,214 @@
 }
 
 body {
-  color: #222;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 16px;
-  font-family: 'Noto Sans', sans-serif, 'Noto Sans KR', sans-serif;
+  color: #222;
+  background: #fff;
 }
 
 a {
   text-decoration: none;
-  color: #222;
+  color: inherit;
 }
 
 #wrap {
   width: 100%;
-  overflow: hidden;
-  background-color: #fff;
+  overflow-x: hidden;
+  background: #fff;
 }
 
-/* 헤더 */
-header {
-  width: 100%;
-  z-index: 99;
+/* ===== 헤더 & 로고 ===== */
+header.pinned_top {
   position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   height: 150px;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
   display: flex;
   justify-content: space-between;
-  padding: 0px 50px;
-  background-color: #fff;
+  align-items: center;
+  padding: 0 60px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+  background: #fff;
+  z-index: 2000;
 }
 
-header .header_item {
-  margin-top: 50px;
-}
-
-header .header_text {
-  text-align: left;
-  font-size: 14px;
-  color: #555;
-  font-weight: 500;
-}
-/* 컨텐츠 영역 */
-.container {
-  width: 100%;
-  padding: 250px 50px 100px 50px;
-  height: auto;
-  background-color: #fff;
-  border-top: 1px solid rgba(128, 128, 128, 0.336);
-  margin: 0 auto;
-  position: relative;
+.top_item.logo {
+  flex: 1;
   display: flex;
-  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.pinned_txt {
+  display: inline-block;
+  pointer-events: auto;
+  text-align: center;
+}
+
+.top_item.logo a {
+  display: inline-block;
+  line-height: 1;
+}
+
+.pinned_txt h1 {
+  margin: 0;
+  display: inline-block;
+  white-space: pre-line;
+  /* <br>만 줄바꿈 */
+  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+/* ===== 햄버거 버튼 ===== */
+#trigger {
+  display: none;
+}
+
+.menu-btn {
+  display: inline-block;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: 2100;
+}
+
+.menu-btn span {
+  display: block;
+  height: 2px;
+  margin: 6px 0;
+  background: rgba(128, 128, 128);
+  transition: 0.4s;
+}
+
+/* 햄버거 → X 애니메이션 */
+#trigger:checked~header .menu-btn span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+#trigger:checked~header .menu-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+#trigger:checked~header .menu-btn span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ===== 사이드바 ===== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -400px;
+  width: 400px;
+  height: 100vh;
+  padding: 150px 60px;
+  background: #fff;
+  overflow-y: auto;
+  z-index: 2050;
+  transition: left 0.3s ease;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar>ul {
+  list-style: none;
+}
+
+.sidebar>ul>li {
+  padding: 5px 0;
+}
+
+.sidebar>ul>li>a {
+  font-size: 14px;
+  color: #888;
+  transition: 0.25s;
+}
+
+.sidebar .sub {
+  display: none;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.sidebar>ul>li:hover>.sub {
+  display: block;
+}
+
+.sub>li>a {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  line-height: 30px;
+}
+
+.sub>li>a:hover {
+  color: rgb(42, 130, 231);
+  font-weight: 600;
+}
+
+/* 닫기 버튼 */
+.nav-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(128, 128, 128);
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  z-index: 2100;
+}
+
+.nav-close:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+/* ===== Overlay ===== */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+}
+
+/* ===== 컨텐츠(Grid) ===== */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: start;
+  gap: 40px;
+  padding: 200px 60px 30px;
 }
 
 .container>img {
-  width: 500px;
-  height: 400px;
+  width: 98%;
+  max-height: 400px;
   object-fit: cover;
-  box-sizing: border-box;
-
 }
 
 .right_section {
-  padding-left: 380px;
-  overflow: hidden;
-  display: grid;
-  row-gap: 60px;
-  grid-auto-rows: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .about_txt {
@@ -86,49 +228,89 @@ header .header_text {
 .about_txt>p {
   padding-bottom: 5px;
   font-size: 15px;
-  color: #999;
   font-weight: 600;
+  color: #999;
 }
 
-
-/* footer영역 */
+/* ===== 풋터 ===== */
 footer {
-  width: 95%;
+  width: 100%;
+  padding: 40px 5%;
   border-top: 1px solid rgba(128, 128, 128, 0.3);
-  margin: 0 auto;
   font-size: 12px;
   text-align: center;
-  padding: 50px;
+  background: #fff;
 }
 
-address {
+footer address {
   font-style: normal;
 }
 
-/* 
-* 모바일 사이즈 스타일 
-*/
-@media all and (max-width: 767px) {
+/* ===== 유틸 ===== */
+body.no-scroll {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
 
-  header {
-    height: 150px;
-    grid-template-columns: 1fr 1fr 1fr;
+/* ===== PC 오버레이 ===== */
+@media (min-width:1025px) {
+  .overlay.pc-overlay.active {
+    display: block;
+  }
+}
+
+/* ===== 태블릿 이하 ===== */
+@media (max-width:1024px) {
+  header.pinned_top {
+    height: 80px;
+    padding: 0 30px;
   }
 
   .container {
-    padding: 0;
+    grid-template-columns: 1fr;
+    padding: 100px 30px 30px;
   }
 
   .container>img {
-    width: 350px;
-    padding-top: 170px;
-    margin: 0 auto;
+    max-height: 300px;
   }
 
   .right_section {
-    padding-left: 30px;
-    padding-top: 30px;
-    overflow: hidden;
-    row-gap: 60px;
+    width: 100%;
+  }
+
+  .sidebar {
+    padding: 100px 30px;
+    left: -360px;
+    width: 300px;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .sidebar ul {
+    margin-top: 40px;
+  }
+
+  .nav-close {
+    display: block;
+  }
+
+  #trigger:checked~.overlay {
+    display: block;
+    opacity: 1;
+  }
+}
+
+/* ===== 모바일 ===== */
+@media (max-width:768px) {
+  .container>img {
+    max-height: 250px;
+  }
+
+  .right_section {
+    width: 100%;
   }
 }
