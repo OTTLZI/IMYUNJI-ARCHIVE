@@ -323,6 +323,7 @@ a {
   max-width: 90vw;
   max-height: 90vh;
   border-radius: 12px;
+  padding: 12px;
   box-sizing: border-box;
 }
 
@@ -332,6 +333,7 @@ a {
   max-height: 100%;
   object-fit: contain;
   display: block;
+  border-radius: 8px;
 }
 
 /* 모달 내부 동영상 */
@@ -343,7 +345,7 @@ a {
   margin: auto;
 }
 
-/* ------------------- Footer ------------------- */
+/* ---- Footer ---- */
 footer {
   width: 95%;
   border-top: 1px solid rgba(128, 128, 128, 0.3);
@@ -362,8 +364,9 @@ address {
 
   /* PC에서 긴 이미지/동영상 제한 */
   .img-modal__bg .modal-image.tall,
+  .img-modal__bg img,
   .img-modal__bg video {
-    max-height: 60vh;
+    max-height: 70vh;
     max-width: 80vw;
   }
 }
@@ -491,7 +494,7 @@ address {
   /* 모바일에서 이미지/동영상 최대 크기 */
   .img-modal__bg img,
   .img-modal__bg video {
-    max-width: 90vw;
+    max-width: 85vw;
     max-height: 90vh;
   }
 }
