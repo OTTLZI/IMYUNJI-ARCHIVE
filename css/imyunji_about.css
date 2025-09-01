@@ -253,11 +253,16 @@ body.no-scroll {
   overflow: hidden;
 }
 
-/* ===== PC 오버레이 ===== */
+/* ===== PC ===== */
 @media (min-width:1025px) {
   .overlay.pc-overlay.active {
     display: block;
   }
+
+  .container>img {
+    object-fit: contain;
+  }
+
 }
 
 /* ===== 태블릿 이하 ===== */
