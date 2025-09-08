@@ -234,11 +234,41 @@ address {
     box-sizing: border-box;
   }
 
+
+  /* 배치 수정  */
   #contentTxt {
     width: 100%;
-    padding: 0px 30px 0 30px;
-    gap: 0px;
+    padding: 0px 30px;
+    margin-top: 0%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
+
+  #mainTitle,
+  #subTitle {
+    text-align: left;
+    font-size: 18px;
+  }
+
+  #mainTitle {
+    font-size: 20px;
+    color: #444;
+    font-weight: 600;
+  }
+
+  #subTitle {
+    font-size: 14px;
+    color: #999;
+  }
+
+  #contentInfo {
+    font-size: 13px;
+    color: #555;
+    line-height: 22px;
+  }
+
 
   .slide-container {
     height: 300px;
