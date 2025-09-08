@@ -7,6 +7,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   color: #222;
   font-size: 16px;
@@ -22,6 +28,11 @@ a {
   width: 100%;
   overflow: hidden;
   background-color: #fff;
+
+  /* footer를 하단에 고정시키기 위한 추가 */
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .btn-top {
@@ -38,19 +49,21 @@ a {
   z-index: 98;
 }
 
-/* container */
 .container {
   width: 100%;
   height: auto;
   margin-top: 200px;
   position: relative;
   display: flex;
+
+  /* footer 밀어내기용 flex-grow */
+  flex: 1;
 }
 
 #contentTxt {
   margin-top: 10%;
   width: 30%;
-  height: 250px;
+  height: 200px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(50%, auto));
   padding-right: 100px;
@@ -83,9 +96,10 @@ a {
 }
 
 .slider-for {
-  max-width: 90%;
-  height: auto;
+  max-width: 1000px;
+  max-height: 500px;
   margin: 0 auto;
+  /* background-color: thistle; */
 }
 
 .slide-container {
@@ -98,9 +112,9 @@ a {
 }
 
 .slide-container>img {
-  max-height: 400px;
+  max-height: 500px;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
   object-position: center;
   margin: 0 auto;
@@ -111,16 +125,20 @@ a {
 }
 
 .slider-nav {
-  width: 950px;
-  height: 200px;
-  /* border: 1px solid rgb(43, 30, 223); */
-  margin: 0 auto;
-  margin-top: 20px;
+  width: 100%;
+  max-width: 800px;
+  height: 160px;
+  margin: 20px auto;
+}
+
+.slick-track {
+  display: flex !important;
+  justify-content: center !important;
 }
 
 .slide-btn {
-  max-width: 250px;
-  height: 200px;
+  max-width: 200px;
+  height: 160px;
   overflow: hidden;
   text-align: center;
   /* border: 1px solid rgb(252, 62, 62); */
@@ -141,14 +159,16 @@ a {
 
 /* footer영역 */
 footer {
-  width: 95%;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-top: 1px solid rgba(128, 128, 128, 0.3);
   margin: 0 auto;
   font-size: 12px;
   text-align: center;
-  padding: 50px;
   margin-top: 80px;
-
 }
 
 address {
@@ -156,16 +176,85 @@ address {
 }
 
 
+/* 태블릿 사이즈 (768px ~ 1024px) */
+@media all and (min-width: 768px) and (max-width: 1024px) {
 
-/* 
-* 모바일 사이즈 스타일 
-*/
+  .container {
+    margin-top: 150px;
+    flex-direction: column;
+    /* PC처럼 좌우 배치하면 너무 답답할 수 있어 세로배치 추천 */
+    align-items: center;
+  }
+
+  #slider-wrp {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .slider-for {
+    max-width: 800px;
+    max-height: 450px;
+  }
+
+  .slide-container {
+    height: 400px;
+  }
+
+  .slide-container>img {
+    max-height: 400px;
+    object-fit: contain;
+  }
+
+  .slider-nav {
+    width: 90%;
+    margin: 15px auto;
+    height: 150px;
+  }
+
+  .slide-btn {
+    max-width: 180px;
+    height: 140px;
+  }
+
+  /* 텍스트 박스 */
+  #contentTxt {
+    width: 90%;
+    padding: 0 40px;
+    margin-top: 40px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #mainTitle {
+    font-size: 22px;
+    text-align: left;
+  }
+
+  #subTitle {
+    font-size: 15px;
+    text-align: left;
+  }
+
+  #contentInfo {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  footer {
+    margin-top: 60px;
+  }
+}
+
+
+
+/* 모바일 사이즈 */
 @media all and (max-width: 767px) {
   .container {
     margin-top: 100px;
     flex-direction: column;
     flex-wrap: wrap;
-    overflow: hidden;
   }
 
   #slider-wrp {
@@ -176,7 +265,7 @@ address {
   /* 배치 수정  */
   #contentTxt {
     width: 100%;
-    padding: 0px 30px;
+    padding: 0px 20px;
     margin-top: 0%;
     height: auto;
     display: flex;
@@ -213,22 +302,25 @@ address {
   }
 
   .slide-container>img {
-    max-height: 300px;
-    /* object-fit: cover; */
+    height: auto;
+    width: 90%;
+    object-fit: cover;
   }
 
   .slider-nav {
-    height: 150px;
-    width: 350px;
-    margin-top: 10px;
+    width: 90%;
+    margin: 10px auto;
+    height: 120px;
   }
 
   .slide-btn {
-    max-width: 150px;
-    height: 120px;
+    max-width: 120px;
+    height: 100px;
   }
 
   footer {
     margin-top: 40px;
+    font-size: 10px;
   }
+
 }

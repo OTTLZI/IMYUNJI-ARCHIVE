@@ -279,138 +279,117 @@
     </footer>
     <!-- 스크립트 -->
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        /* ==================== 슬라이드 ==================== */
-        const sliders = document.querySelectorAll(".slider");
+  document.addEventListener("DOMContentLoaded", () => {
+    /* ==================== 슬라이드 ==================== */
+    const sliders = document.querySelectorAll(".slider");
 
-        sliders.forEach((slider) => {
-          const slides = slider.querySelector(".slides");
-          const slideItems = slider.querySelectorAll(".slide");
-          const prevBtn = slider.querySelector(".prev");
-          const nextBtn = slider.querySelector(".next");
-          let index = 0;
+    sliders.forEach((slider) => {
+      const slides = slider.querySelector(".slides");
+      const slideItems = slider.querySelectorAll(".slide");
+      const prevBtn = slider.querySelector(".prev");
+      const nextBtn = slider.querySelector(".next");
+      let index = 0;
 
-          function updateSlide() {
-            slides.style.transform = `translateX(-${index * 100}%)`;
-          }
+      function updateSlide() {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+      }
 
-          if (nextBtn) {
-            nextBtn.addEventListener("click", () => {
-              index = (index + 1) % slideItems.length;
-              updateSlide();
-            });
-          }
-
-          if (prevBtn) {
-            prevBtn.addEventListener("click", () => {
-              index = (index - 1 + slideItems.length) % slideItems.length;
-              updateSlide();
-            });
-          }
-
-          // 자동 슬라이드
-          setInterval(() => {
-            index = (index + 1) % slideItems.length;
-            updateSlide();
-          }, 5000);
+      if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+          index = (index + 1) % slideItems.length;
+          updateSlide();
         });
+      }
 
-        /* ==================== 모달 (썸네일 클릭 → 영상/이미지) ==================== */
-        const modal = document.getElementById("imgModal");
-        const modalBg = document.getElementById("modalBg");
-        const modalClose = document.querySelector(".img-modal__close");
-
-        document.querySelectorAll(".slide img").forEach((img) => {
-          img.style.cursor = "pointer";
-
-          img.addEventListener("click", () => {
-            const videoSrc = img.dataset.video;
-
-            // 기존 모달 콘텐츠 제거
-            modalBg.innerHTML = "";
-
-            // 기본 배경 및 패딩
-            modalBg.style.backgroundColor = "#fff";
-            modalBg.style.padding = "12px"; // 기본값
-
-            /* == Project A 특정 슬라이드 패딩 제어 === */
-            if (img.closest(".project-block")?.id === "projectA") {
-              const slides = img.closest(".slides").children;
-              const index = Array.from(slides).indexOf(img.closest(".slide"));
-              const specialSlides = [0, 2, 5]; // 1,3,6번째 슬라이드
-              if (specialSlides.includes(index)) {
-                modalBg.style.padding = "0px"; // 원하는 값
-              }
-            }
-
-            /* == Project C 배경 투명 처리 (예시, 나중 확장 가능) == */
-            if (img.closest(".project-block")?.id === "projectC") {
-              modalBg.style.backgroundColor = "transparent";
-            }
-
-            // 이미지/비디오 삽입
-            if (videoSrc) {
-              const videoEl = document.createElement("video");
-              videoEl.src = videoSrc;
-              videoEl.controls = true;
-              videoEl.autoplay = true;
-              videoEl.muted = true;
-              videoEl.playsInline = true;
-              videoEl.classList.add("modal-video");
-              modalBg.appendChild(videoEl);
-            } else {
-              const imgEl = document.createElement("img");
-              imgEl.src = img.src;
-              imgEl.alt = "modal image";
-              imgEl.classList.add("modal-image");
-              modalBg.appendChild(imgEl);
-            }
-
-            // 모달 열기
-            modal.style.display = "flex";
-            modal.setAttribute("aria-hidden", "false");
-            document.body.style.overflow = "hidden";
-          });
+      if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+          index = (index - 1 + slideItems.length) % slideItems.length;
+          updateSlide();
         });
+      }
 
-        // 모달 닫기 함수
-        function closeModal() {
-          modal.style.display = "none";
-          modal.setAttribute("aria-hidden", "true");
-          document.body.style.overflow = "";
-          modalBg.innerHTML = ""; // 영상/이미지 제거
+      // 자동 슬라이드
+      setInterval(() => {
+        index = (index + 1) % slideItems.length;
+        updateSlide();
+      }, 5000);
+    });
+
+    /* ==================== 모달 (썸네일 클릭 → 영상/이미지) ==================== */
+    const modal = document.getElementById("imgModal");
+    const modalBg = document.getElementById("modalBg");
+    const modalClose = document.querySelector(".img-modal__close");
+
+    document.querySelectorAll(".slide img").forEach((img) => {
+      img.style.cursor = "pointer";
+
+      img.addEventListener("click", () => {
+        const videoSrc = img.dataset.video;
+
+        // 기존 모달 콘텐츠 제거
+        modalBg.innerHTML = "";
+
+        // 기본 배경 및 패딩
+        modalBg.style.backgroundColor = "#fff";
+        modalBg.style.padding = "12px";
+
+        /* == Project A 특정 슬라이드 패딩 제어 === */
+        if (img.closest(".project-block")?.id === "projectA") {
+          const slides = img.closest(".slides").children;
+          const index = Array.from(slides).indexOf(img.closest(".slide"));
+          const specialSlides = [0, 2, 5];
+          if (specialSlides.includes(index)) {
+            modalBg.style.padding = "0px";
+          }
         }
 
-        modalClose.addEventListener("click", closeModal);
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) closeModal();
-        });
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && modal.style.display === "flex") closeModal();
-        });
-
-        /* ==================== 사이드바 overlay ==================== */
-        const trigger = document.getElementById("trigger");
-        const overlay = document.querySelector(".overlay");
-
-        if (overlay) {
-          overlay.addEventListener("click", () => {
-            trigger.checked = false;
-            document.body.classList.remove("menu-open");
-          });
+        /* == Project C 배경 투명 처리 === */
+        if (img.closest(".project-block")?.id === "projectC") {
+          modalBg.style.backgroundColor = "transparent";
         }
 
-        if (trigger) {
-          trigger.addEventListener("change", () => {
-            if (trigger.checked) {
-              document.body.classList.add("menu-open");
-            } else {
-              document.body.classList.remove("menu-open");
-            }
-          });
+        // 이미지/비디오 삽입
+        if (videoSrc) {
+          const videoEl = document.createElement("video");
+          videoEl.src = videoSrc;
+          videoEl.controls = true;
+          videoEl.autoplay = true;
+          videoEl.muted = true;
+          videoEl.playsInline = true;
+          videoEl.classList.add("modal-video");
+          modalBg.appendChild(videoEl);
+        } else {
+          const imgEl = document.createElement("img");
+          imgEl.src = img.src;
+          imgEl.alt = "modal image";
+          imgEl.classList.add("modal-image");
+          modalBg.appendChild(imgEl);
         }
+
+        // 모달 열기
+        modal.style.display = "flex";
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
       });
-    </script>
+    });
+
+    // 모달 닫기 함수
+    function closeModal() {
+      modal.style.display = "none";
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      modalBg.innerHTML = "";
+    }
+
+    modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.style.display === "flex") closeModal();
+    });
+  });
+</script>
 
 
 
