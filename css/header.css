@@ -87,12 +87,12 @@
 .sidebar {
   position: fixed;
   top: 0;
-  left: -350px;
-  width: 350px;
+  left: -340px;
+  width: 340px;
   height: 100%;
   background: #f4f4f4;
   font-size: 14px;
-  line-height: 30px;
+  line-height: 40px;
   padding: 100px 0px 0px 60px;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
   transition: left 0.3s ease;
@@ -224,5 +224,16 @@ body.menu-open {
     top: 0;
     left: 0;
     position: relative;
+  }
+
+  /* 햄버거 버튼 이동 */
+  #trigger:checked+.menu-btn {
+    position: fixed;
+    left: 350px;
+    top: 60px;
+  }
+
+  .sidebar {
+    padding: 100px 0px 0px 40px;
   }
 }

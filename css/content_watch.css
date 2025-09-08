@@ -42,7 +42,7 @@ a {
 .container {
   width: 100%;
   height: auto;
-  margin-top: 150px;
+  margin-top: 200px;
   position: relative;
   display: flex;
 }
@@ -99,7 +99,9 @@ a {
 }
 
 .slide-container>img {
-  max-height: 500px;
+  max-height: 400px;
+  width: 100%;
+  height: auto;
   object-fit: contain;
   object-position: center;
   margin: 0 auto;
@@ -146,6 +148,7 @@ footer {
   font-size: 12px;
   text-align: center;
   padding: 50px;
+  margin-top: 80px;
 }
 
 address {
@@ -159,6 +162,7 @@ address {
 */
 @media all and (max-width: 767px) {
   .container {
+    margin-top: 100px;
     flex-direction: column;
     flex-wrap: wrap;
   }
@@ -170,19 +174,32 @@ address {
   #contentTxt {
     width: 100%;
     padding: 0px 30px;
+    margin-top: 0%;
+    height: 150px;
   }
 
   .slide-container {
     height: 400px;
   }
 
+  .slide-container>img {
+    max-height: 250px;
+    object-fit: cover;
+  }
+
   .slider-nav {
     width: 350px;
     margin-top: 10px;
+    height: 160px;
   }
 
   .slide-btn {
     max-width: 150px;
     height: 120px;
   }
+
+  footer {
+    margin-top: 40px;
+  }
+
 }

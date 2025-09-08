@@ -28,7 +28,7 @@ a {
 .container {
   width: 100%;
   height: auto;
-  margin-top: 150px;
+  margin-top: 200px;
   position: relative;
   display: flex;
 }
@@ -69,10 +69,9 @@ a {
 }
 
 .slider-for {
-  max-width: 1000px;
-  max-height: 500px;
+  max-width: 90%;
+  height: auto;
   margin: 0 auto;
-  /* background-color: thistle; */
 }
 
 .slide-container {
@@ -85,8 +84,10 @@ a {
 }
 
 .slide-container>img {
-  max-height: 500px;
-  object-fit: contain;
+  max-height: 400px;
+  height: auto;
+  object-fit: cover;
+  /* cover로 변경 */
   object-position: center;
   margin: 0 auto;
   position: absolute;
@@ -145,8 +146,14 @@ address {
 */
 @media all and (max-width: 767px) {
   .container {
+    margin-top: 100px;
     flex-direction: column;
     flex-wrap: wrap;
+  }
+
+  .slide-container>img {
+    max-height: 250px;
+    object-fit: cover;
   }
 
   #slider-wrp {
@@ -156,15 +163,18 @@ address {
   #contentTxt {
     width: 100%;
     padding: 0px 30px;
+    margin-top: 0%;
+    height: 150px;
   }
 
   .slide-container {
-    height: 400px;
+    height: 300px;
   }
 
   .slider-nav {
     width: 350px;
     margin-top: 10px;
+    height: 160px;
   }
 
   .slide-btn {

@@ -220,6 +220,13 @@ address {
     margin-top: 100px;
   }
 
+  .slide-container>img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    object-position: center;
+  }
+
   #slider-wrp {
     width: 100%;
     padding: 0 20px;
