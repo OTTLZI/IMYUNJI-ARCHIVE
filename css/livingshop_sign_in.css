@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import "./common/reset.css";
+
 * {
   margin: 0;
   padding: 0;
@@ -17,89 +18,124 @@ a {
   text-decoration: none;
   color: white;
 }
+
 #wrap {
   width: 100%;
   overflow: hidden;
-}
-#wrap>a{
-  font-size: 40px;
   padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
 }
+
+#wrap>a {
+  font-size: 30px;
+  padding: 15px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
 .info {
   width: 100%;
-  overflow: hidden;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 120px;
 }
 
 .info p {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 500;
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  text-align: center;
+  /* 중앙 정렬 */
 }
 
 .item {
-  height: 100px;
-  justify-content: center;
+  height: 60px;
+  display: flex;
   align-items: center;
-  display: grid;
-  grid-template-columns: 40px auto;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.item i {
   font-size: 25px;
+  margin-right: 15px;
+  color: #ddd;
 }
 
 .item input {
-  width: 400px;
-  height: 30px;
+  width: 100%;
+  height: 40px;
   font-size: 16px;
+  padding-left: 10px;
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: #fff;
 }
 
 .signInBtn {
-  width: 440px;
-  height: 40px;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: calc(100% - 40px);
+  height: 45px;
   font-size: 18px;
   font-weight: 600;
-  margin-top: 40px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background-color: #f4a261;
+  border: none;
+  color: white;
+  border-radius: 5px;
 }
 
 #signIn_sns {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 250px;
+  margin-top: 40px;
+  width: 100%;
+  flex-direction: column;
 }
 
 #signIn_sns>p {
   font-size: 16px;
   padding-bottom: 25px;
+  text-align: center;
 }
 
 .sns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 15px;
+  width: 100%;
   background-color: #eee;
-  padding: 20px 30px;
+  padding: 15px 0;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
 }
 
 .sns a {
   border: 3px solid rgb(255, 255, 255);
-  display: inline-block;
-  width: 60px;
-  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   background-color: #fff;
-  text-align: center;
-  line-height: 60px;
-  font-size: 30px;
   color: black;
-  margin: 10px;
   overflow: hidden;
   position: relative;
+  font-size: 36px;
+}
+
+.sns a .fa-brands {
+  font-size: 36px;
 }
 
 .sns a::before {
@@ -142,10 +178,50 @@ a {
   color: #fff;
 }
 
+/* 미디어쿼리: 모바일 화면 */
+@media (max-width: 767px) {
+  .info p {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
 
-/* 미디어쿼리1*/
-/*테블릿 가로, 테블릿 세로 (해상도 768px ~ 1239px)*/
-@media all and (min-width:768px) and (max-width:1239px) {}
+  .item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
 
-/* 미디어쿼리2// 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
-@media all and (min-width:480px) and (max-width:767px) {}
+  .item i {
+    margin-right: 10px;
+  }
+
+  .item input {
+    width: 100%;
+    max-width: 85%;
+    font-size: 14px;
+    height: 35px;
+  }
+
+  .signInBtn {
+    width: calc(100% - 40px);
+    /* 좌우 20px 여백을 제외한 크기 */
+    font-size: 16px;
+    height: 45px;
+  }
+
+  #signIn_sns {
+    margin-top: 30px;
+  }
+
+  #signIn_sns>p {
+    font-size: 14px;
+    padding-bottom: 15px;
+  }
+
+  .sns a {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+  }
+}

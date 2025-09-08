@@ -1,18 +1,16 @@
 @charset "utf-8";
-@import "./common/reset.css";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 body {
-  color: rgb(231, 231, 231);
+  color: #e7e7e7;
   font-size: 16px;
-  font-family: 'Noto Sans', sans-serif, 'Noto Sans KR', sans-serif;
-  background-color: black;
+  font-family: 'Noto Sans', sans-serif, 'Noto Sans KR';
+  background: black;
 }
 
 a {
@@ -22,33 +20,28 @@ a {
 
 #wrap {
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
 }
 
 header {
   width: 100%;
-  height: 140px;
-  margin: 0 auto;
+  height: 100px;
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
   z-index: 999;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
+  background: black;
 }
 
-.rightItem {
-  width: 100%;
-  max-width: 1300px;
-  height: 80px;
-  margin: 0 auto;
-}
-
-.rightItem>ul {
-  width: 230px;
-  height: 80px;
-  float: right;
-  padding: 20px 10px;
-
+.rightItem ul {
+  display: flex;
+  list-style: none;
+  gap: 10px;
 }
 
 #signIn,
@@ -57,172 +50,149 @@ header {
   height: 40px;
   border-radius: 25px;
   border: 2px solid whitesmoke;
-  float: left;
   text-align: center;
-  line-height: 30px;
-  z-index: 999;
+  line-height: 36px;
   cursor: pointer;
+  background: black;
 }
 
 #signUp {
   margin-left: 10px;
 }
 
-input[name=tabmenu] {
-  display: none;
-}
-
-.tabs {
-  overflow: hidden;
-  position: relative;
-  height: 100vh;
-}
-
-.tab-item {
-  height: 100vh;
-  width: 300%;
-  transition: 0.2s;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* 3칸 나뉘어진 div */
-.tab-item>div {
-  height: 100vh;
-  overflow: scroll;
-  float: left;
-  width: 33.33333%;
-  box-sizing: border-box;
+.btn {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 60px;
+  background: black;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* about */
-.tab-item div:nth-child(2) {
-  overflow: hidden;
-}
-
-.about {
-  width: 900px;
-  height: 500px;
-}
-
-.tab-item div h1 {
-  font-size: 30px;
-}
-
-.about>h1 {
-  text-align: center;
-}
-
-.about>p {
-  padding-top: 50px;
-  text-align: center;
-  font-size: 18px;
-}
-
-/* cart */
-.tab-item div:nth-child(3) {
-  overflow: hidden;
-}
-
-
-
-.btn {
-  position: fixed;
-  width: 100%;
-  text-align: center;
-  top: 100px;
+  gap: 10px;
+  z-index: 998;
 }
 
 .btn label {
-  display: inline-block;
-  height: 40px;
+  flex: 0 0 auto;
   width: 100px;
-  background-color: #444;
-  cursor: pointer;
-  margin: 5px;
-  border-radius: 20px;
+  height: 40px;
   line-height: 40px;
+  text-align: center;
+  background: #444;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
-input[id=tab1]:checked~.tabs .tab-item {
-  left: -100%;
+/* 탭 컨테이너 */
+.tabs {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 160px;
+  /* header+btn */
+  overflow: hidden;
 }
 
-input[id=tab2]:checked~.tabs .tab-item {
-  left: 0;
+/* 기본 상태: 숨김 */
+.tab-item {
+  display: none;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-input[id=tab3]:checked~.tabs .tab-item {
-  left: -200%;
+/* 라디오버튼 연결 */
+#tab1:checked~.tabs .about-tab {
+  display: block;
 }
 
-/* shop items */
+#tab2:checked~.tabs .shop-tab {
+  display: block;
+}
+
+#tab3:checked~.tabs .cart-tab {
+  display: block;
+}
+
+.tab-item.active {
+  display: block;
+}
+
+.about-tab,
+.cart-tab {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* ABOUT 탭 텍스트 (기본) */
+.about-tab p {
+  line-height: 1.8;
+  font-size: 16px;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 .products {
   width: 100%;
-  overflow: hidden;
-  margin: 0 auto;
-  padding-top: 400px;
+  max-width: 1660px;
+  margin: 0 auto 50px;
 }
 
 .items {
-  width: 100%;
-  max-width: 1660px;
-  margin: 200px auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 50px 20px;
 }
 
-/* item */
 .item {
-  width: 100%;
-  max-width: 400px;
-  overflow: hidden;
   position: relative;
-  /* border: 1px solid #ddd; */
-  display: inline-block;
+  overflow: hidden;
 }
 
-.item:hover img {
-  filter: blur(2px)
-}
-
-.products>ul>li>img {
+.item img {
   width: 100%;
-  height: 300px;
+  display: block;
 }
 
 .caption {
   width: 100%;
   height: 70%;
-  background-color: rgba(26, 26, 26, 0.3);
+  background: rgba(26, 26, 26, 0.3);
   position: absolute;
-  bottom: -187px;
+  bottom: -160px;
   left: 0;
   padding: 20px;
   box-sizing: border-box;
-  opacity: 1;
   transition: 0.5s;
-  margin-bottom: 20px;
+  text-align: left;
+}
+
+.item:hover img {
+  filter: blur(2px);
 }
 
 .item:hover .caption {
   bottom: 0;
 }
 
-/* title */
 .title {
   border-bottom: 1px solid #ddd;
   overflow: hidden;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .title h2 {
   font-size: 16px;
   float: left;
+  margin: 0;
 }
 
 .title span {
@@ -231,51 +201,43 @@ input[id=tab3]:checked~.tabs .tab-item {
 }
 
 .info {
-  position: relative;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  flex-wrap: wrap;
 }
 
-/* size */
-.size {
-  margin: 10px 0;
+/* 좌측: size + color 묶음 */
+.info-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .size label,
 .color label {
-  display: block;
-  margin-bottom: 3px;
+  font-weight: bold;
+  margin-right: 6px;
 }
 
-.size span {
-  font-size: 12px;
-  margin-right: 5px;
+.size,
+.color {
+  margin: 10px 0;
   display: inline-block;
-  width: 30px;
-  height: 20px;
-  text-align: center;
-  line-height: 15px;
-  border-radius: 3px;
-  padding: 3px;
-  cursor: pointer;
-}
-
-.size span.active,
-.size span:hover {
-  background-color: #333;
 }
 
 .size span,
 .color span {
-  transition: 0.3s;
+  display: inline-block;
+  margin-right: 4px;
+  cursor: pointer;
 }
 
-.color span {
-  width: 15px;
-  height: 15px;
-  display: inline-block;
-  margin-right: 5px;
-  padding: 2px;
-  cursor: pointer;
+
+.size span.active,
+.size span:hover {
+  background: #333;
 }
 
 .color span.active,
@@ -283,93 +245,118 @@ input[id=tab3]:checked~.tabs .tab-item {
   border: 2px solid #eee;
 }
 
-.color span:nth-child(2) {
-  background-color: rgb(228, 225, 220);
-}
-
-.color span:nth-child(3) {
-  background-color: rgb(138, 134, 134);
-}
-
-.color span:nth-child(4) {
-  background-color: rgb(211, 191, 158);
-}
-
-.color span:nth-child(5) {
-  background-color: rgb(144, 144, 144);
-}
-
-.color span:nth-child(6) {
-  background-color: rgb(42, 42, 42);
-}
-
 .add-cart {
   width: 100%;
   padding: 7px;
-  background-color: #333;
+  background: #333;
   cursor: pointer;
   margin-top: 20px;
   color: azure;
 }
 
 .add-cart:hover {
-  background-color: rgb(255, 255, 255);
+  background: #fff;
   color: #444;
 }
 
-/* like */
 .like {
+  font-size: 18px;
   cursor: pointer;
+  align-self: flex-start;
+  margin-top: 10px;
 }
 
 .like::before {
   content: '\f08a';
-  font-family: "fontawesome";
+  font-family: "FontAwesome";
   font-weight: 400;
   color: #eee;
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin: 10px;
 }
 
 .like.active::before {
   content: '\f004';
-  font-family: "fontawesome";
+  font-family: "FontAwesome";
   font-weight: 900;
   color: crimson;
 }
 
+@media all and (max-width:767px) {
+  header {
+    height: 60px;
+    padding: 10px;
+  }
 
+  .btn {
+    top: 60px;
+    height: 80px;
+  }
 
-/* 미디어쿼리1*/
-/*테블릿 가로, 테블릿 세로 (해상도 768px ~ 1239px)*/
-@media all and (min-width:768px) and (max-width:1239px) {
+  .btn label {
+    width: 90px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+  }
+
   .items {
-    padding-top: 900px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-content: center; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 
-  .item {
-    width: 90%;
-  }
-}
-
-/* 미디어쿼리2// 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
-@media all and (min-width:480px) and (max-width:767px) {
-  .items {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-content: center; 
-    padding-top: 3000px;
+  .caption {
+    position: relative;
+    bottom: 0;
+    max-height: 60px;
+    /* collapsed 상태 */
+    overflow: hidden;
+    background: rgba(26, 26, 26, 0.5);
+    transition: max-height 0.3s ease;
+    cursor: pointer;
   }
 
-  .item {
-    width: 80%;
+  .caption.expanded {
+    max-height: 500px;
+    /* 확장 상태 */
   }
 
+  .caption .title h2,
+  .caption .title span,
+  .caption .info,
+  .caption .size,
+  .caption .color {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .caption .title span {
+    font-size: 12px;
+  }
+
+  .caption .like {
+    top: 0;
+    right: 10px;
+    font-size: 14px;
+  }
+
+  .about-tab {
+    font-size: 14px;
+  }
+
+  .about-tab p {
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 15px 0px;
+  }
+
+  .info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .like {
+    margin-top: 8px;
+    align-self: flex-end;
+  }
 }
