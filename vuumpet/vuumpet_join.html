@@ -11,60 +11,97 @@
 
 <body>
     <div id="wrap">
-
-        <!--header-->
         <header>
-            <!--nav(메뉴)-->
-            <div class="nav">
-                <div class="gnb_left">
-                    <ul class="nav_left">
-                        <li class="nav_list"><a href="vuumpet_login.html" target="">로그인</a></li>
-                        <li class="nav_list"><a href="vuumpet_join.html" target="">회원가입</a></li>
-                        <li class="nav_list"><a href="#" target="">주문조회</a></li>
-                        <li class="nav_list"><a href="#" target="">마이페이지</a></li>
-                    </ul>
-                </div>
-                <div class="gnb_right">
-                    <div class="nav_right">
+            <div class="header_wrap">
+                <!-- 1단: 좌측 로그인 / 우측 검색+장바구니 -->
+                <div class="header_top">
+                    <nav class="gnb_left">
+                        <ul>
+                            <li><a href="./vuumpet_login.html">로그인</a></li>
+                            <li><a href="./vuumpet_join.html">회원가입</a></li>
+                        </ul>
+                    </nav>
+                    <div class="gnb_right">
                         <div class="search">
-                            <a href="#" target="">
-                                <img class="search_icon" src="../img/search_icon.png" alt="검색바">
-                            </a>
+                            <img src="../img/search_icon.png" class="search_icon" alt="검색">
                         </div>
                         <div class="basket">
-                            <a href="#" target="">
-                                <img class="basket_img" src="../img/basket.png" alt="장바구니">
-                            </a>
+                            <img src="../img/basket.png" class="basket_img" alt="장바구니">
                         </div>
                     </div>
                 </div>
 
-                <!--로고-->
-                <h1 id="logo">
-                    <a href="vuumpet_main.html" target="">
-                        <img class="logo_img" src="../img/logo.png" alt="로고">
-                    </a>
-                </h1>
-                <div class="cnb">
-                    <!--전체보기버튼-->
+                <!-- 2단: 좌측 햄버거 / 중앙 로고 -->
+                <div class="header_bottom">
                     <div class="view_all">
-                        <a href="#" target="">
-                            <img class="view_all_icon" src="../img/menu.png" alt="메뉴 전체보기">
-                        </a>
+                        <input type="checkbox" id="trigger">
+                        <label for="trigger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </label>
+                        <!-- <div class="allmenu">
+                            <div class="menuGroup">
+                                <h3 class="menuTitle">강아지</h3>
+                                <ul class="menuArchive">
+                                    <li>사료</li>
+                                    <li>간식</li>
+                                    <li>건강관리</li>
+                                    <li>위생/배변</li>
+                                    <li>미용/목욕</li>
+                                    <li>급식/급수기</li>
+                                    <li>장난감</li>
+                                    <li>하우스</li>
+                                    <li>이동장</li>
+                                    <li>패션/의류</li>
+                                    <li>목줄/하네스</li>
+                                </ul>
+                            </div>
+                            <div class="menuGroup">
+                                <h3 class="menuTitle">고양이</h3>
+                                <ul class="menuArchive">
+                                    <li>사료</li>
+                                    <li>간식</li>
+                                    <li>건강관리</li>
+                                    <li>모래</li>
+                                    <li>화장실/위생</li>
+                                    <li>미용/목욕</li>
+                                    <li>급식/급수기</li>
+                                    <li>장난감/캣닢</li>
+                                    <li>스크래쳐/캣타워</li>
+                                    <li>하우스</li>
+                                    <li>이동장</li>
+                                    <li>패션/의류</li>
+                                    <li>목줄/하네스</li>
+                                </ul>
+                            </div>
+                        </div> -->
                     </div>
-                    <div class="category">
-                        <!--카테고리-->
-                        <ul class="ctgr">
-                            <li class="ctgr_txt"><a href="vuumpet_main.html" target="">home</a></li>
-                            <li class="ctgr_txt"><a href="#" target="">실시간 인기상품</a></li>
-                            <li class="ctgr_txt"><a href="#" target="">특가상품</a></li>
-                            <li class="ctgr_txt"><a href="#" target="">이벤트</a></li>
-                            <li class="ctgr_txt"><a href="#" target="">스탬프샵</a></li>
-                        </ul>
+
+                    <div id="logo">
+                        <a href="./vuumpet_main.html">
+                            <img src="../img/logo.png" alt="로고">
+                        </a>
+
                     </div>
                 </div>
             </div>
         </header>
+
+
+        <!-- 카테고리 -->
+        <div class="cnb">
+            <div class="category">
+                <ul class="ctgr">
+                    <li class="ctgr_txt"><a href="./vuumpet_main.html">home</a></li>
+                    <li class="ctgr_txt"><a href="#">실시간 인기상품</a></li>
+                    <li class="ctgr_txt"><a href="#">특가상품</a></li>
+                    <li class="ctgr_txt"><a href="#">이벤트</a></li>
+                    <li class="ctgr_txt"><a href="#">스탬프샵</a></li>
+                </ul>
+            </div>
+        </div>
+
         <!-- 컨텐츠1 시작 -->
         <section class="contents1">
             <div class="titlearea">
