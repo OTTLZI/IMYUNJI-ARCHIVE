@@ -456,14 +456,14 @@ header {
     max-width: 100%;
     position: absolute;
     bottom: 0%;
-    left: 25%;
+    left: 0%;
 }
 
 .con_2_cat {
     max-width: 100%;
     position: absolute;
     bottom: 0%;
-    right: 25%;
+    right: 0%;
 }
 
 /* =======콘텐츠2 텍스트영역======= */
